@@ -1,7 +1,7 @@
 const Workout = require("../models/Workout");
 
 module.exports = (app) => {
-    app.get("/api/workouts", res => {
+    app.get("/api/workouts", (req, res) => {
         // Get all workouts
         Workout.find({})
             .then(allWorkouts => {

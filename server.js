@@ -5,7 +5,7 @@ const mongoose = require("mongoose");
 // Set up PORT 
 const PORT = process.env.PORT || 3000
 
-// Use middleware
+// Use middleware to set up express server
 const app = express();
 
 app.use(express.urlencoded({ extended: true }));
