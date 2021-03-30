@@ -1,6 +1,7 @@
 init();
 
 async function init() {
+  // Calls getLastWorkout() function if 'Continue Workout' button is clicked
   if (location.search.split("=")[1] === undefined) {
     const workout = await API.getLastWorkout();
     if (workout) {
