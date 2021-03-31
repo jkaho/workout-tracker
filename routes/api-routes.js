@@ -4,19 +4,16 @@ module.exports = (app) => {
     app.get("/api/workouts", (req, res) => {
         // Get all workouts
         db.Workout.aggregate([
-            { $addFields: {
-                totalDuration: { $sum: "$exercises.duration" }
-            }}
-        ]).then(
-            db.Workout.find({})
-            .then(allWorkouts => {
-                console.log(allWorkouts);
-                res.json(allWorkouts);
-            })
-            .catch(err => {
-                res.json(err);
-            })
-        )
+            { 
+                $addFields: {
+                    totalDuration: { $sum: "$exercises.duration" }
+                }
+            }
+        ]).then(result => {
+            res.json(result)
+        }).catch(err => {
+            res.json(err);
+        });
     });
 
     app.post("/api/workouts", (data, res) => {
