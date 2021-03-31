@@ -16,6 +16,7 @@ const WorkoutSchema = new Schema(
                 },
                 name: {
                     type: String,
+                    trim: true,
                     unique: true,
                     required: true
                 },
