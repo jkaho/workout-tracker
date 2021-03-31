@@ -17,46 +17,40 @@ const WorkoutSchema = new Schema(
                 name: {
                     type: String,
                     trim: true,
-                    unique: true,
                     required: true
                 },
                 duration: {
                     type: Number,
-                    required: true
                 },
                 // Cardio 
                 distance: {
                     type: Number,
-                    required: true
                 },
                 // Resistance
                 weight: {
                     type: Number,
-                    required: true
                 },
                 sets: {
                     type: Number,
-                    required: true
                 },
                 reps: {
                     type: Number,
-                    required: true
                 }
             }
         ]
     },
-    {
-        toJSON: {
-            virtuals: true
-        }
-    }
+    // {
+    //     toJSON: {
+    //         virtuals: true
+    //     }
+    // }
 );
 
-WorkoutSchema.virtual("totalDuration").get(() => {
-    return this.exercises.reduce((totalDuration, exercise) => {
-        return totalDuration + exercise.duration;
-    }, 0);
-});
+// WorkoutSchema.virtual("totalDuration").get(() => {
+//     return this.exercises.reduce((totalDuration, exercise) => {
+//         return totalDuration + exercise.duration;
+//     }, 0);
+// });
 
 const Workout = mongoose.model("Workout", WorkoutSchema);
 
