@@ -42,13 +42,17 @@ module.exports = (app) => {
     });
 
     app.get("/api/workouts/range", (data, res) => {
-        // Get all workouts (?)
-        db.Workout.find({})
-            .then(allWorkouts => {
-                res.json(allWorkouts);
-            })
-            .catch(err => {
-                res.json(err);
-            });
+        // Get past seven workouts
+        db.Workout.aggregate([
+            { 
+                $addFields: {
+                    totalDuration: { $sum: "$exercises.duration" }
+                }
+            }
+        ]).then(result => {
+            res.json(result.slice(-7));
+        }).catch(err => {
+            res.json(err);
+        });
     })
 }
