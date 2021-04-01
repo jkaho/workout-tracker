@@ -50,7 +50,8 @@ module.exports = (app) => {
                 }
             }
         ]).then(result => {
-            res.json(result.slice(-7));
+            const resultInRange = result.slice(-7);
+            res.json(resultInRange);
         }).catch(err => {
             res.json(err);
         });
