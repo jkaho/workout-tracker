@@ -5,20 +5,26 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100;300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css" />
     <link rel="stylesheet" href="css/style.css" />
-    <title>Fitness Tracker</title>
+    <title>Workout Tracker</title>
 </head>
 
 <body>
     <nav>
-        <a href="/">Fitness Tracker</a>
-        <a href="/stats">Dashboard</a>
+        <div class="nav-title">
+            <a href="/"><img src="images/logo.png"></a>
+        </div>
+        <div class="nav-links">
+            <a id="fitness-tracker-link" href="/">Home</a>
+            <a href="/stats">Dashboard</a>
+            <a href="/history">Workout History</a>
+        </div>
     </nav>
     <div class="wrapper workout">
-        <header>
-            <h1>Fitness Tracker</h1>
-        </header>
+        <header></header>
         <div class="ui container workout">
             <div class="ui raised card m-auto">
                 <div class="prev-workout">
@@ -26,8 +32,8 @@
                     <div>
                         <div class="workout-stats"></div>
                         <div class="buttons">
-                            <a id="continue-btn" href="/exercise?" class="huge ui blue button">Continue Workout</a>
-                            <a href="/exercise" class="huge positive ui button">New Workout</a>
+                            <a id="continue-btn" href="/exercise?" class="ui button">Continue Workout</a>
+                            <a id="new-btn" href="/exercise" class="ui button">New Workout</a>
                         </div>
                     </div>
                 </div>

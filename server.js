@@ -3,7 +3,7 @@ const express = require("express");
 const mongoose = require("mongoose");
 
 // Set up PORT 
-const PORT = process.env.PORT || 3000
+const PORT = process.env.PORT || 8000
 
 // Use middleware to set up express server
 const app = express();

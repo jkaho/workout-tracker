@@ -48,27 +48,47 @@ function renderWorkoutSummary(summary) {
   const container = document.querySelector(".workout-stats");
 
   const workoutKeyMap = {
-    date: "Date",
-    totalDuration: "Total Workout Duration",
-    numExercises: "Exercises Performed",
-    totalWeight: "Total Weight Lifted",
-    totalSets: "Total Sets Performed",
-    totalReps: "Total Reps Performed",
-    totalDistance: "Total Distance Covered"
+    date: "DATE",
+    numExercises: "EXERCISES PERFORMED",
+    totalDuration: "WORKOUT DURATION",
+    totalWeight: "TOTAL WEIGHT LIFTED",
+    totalSets: "TOTAL SETS PERFORMED",
+    totalReps: "TOTAL REPS PERFORMED",
+    totalDistance: "TOTAL DISTANCE COVERED"
   };
 
-  Object.keys(summary).forEach(key => {
-    const p = document.createElement("p");
-    const strong = document.createElement("strong");
+  const workoutTable = document.createElement("table");
+  workoutTable.classList.add("workout-table");
+    Object.keys(summary).forEach(key => {
+      const tr = document.createElement("tr");
+      const tdKey = document.createElement("td");
+      tdKey.classList.add("workout-keys");
+      const tdValue = document.createElement("td");
+      tdValue.classList.add("workout-values");
+      const p = document.createElement("p");
+      p.textContent = workoutKeyMap[key];
+      const textNode = document.createTextNode(`${summary[key]}`);
+      tdKey.appendChild(p);
+      tdValue.appendChild(textNode);
 
-    strong.textContent = workoutKeyMap[key];
-    const textNode = document.createTextNode(`: ${summary[key]}`);
+      tr.appendChild(tdKey);
+      tr.appendChild(tdValue);
+      workoutTable.append(tr);
 
-    p.appendChild(strong);
-    p.appendChild(textNode);
-
-    container.appendChild(p);
+      container.appendChild(workoutTable);
   });
+//   Object.keys(summary).forEach(key => {
+//     const p = document.createElement("p");
+//     const strong = document.createElement("strong");
+
+//     strong.textContent = workoutKeyMap[key];
+//     const textNode = document.createTextNode(`: ${summary[key]}`);
+
+//     p.appendChild(strong);
+//     p.appendChild(textNode);
+
+//     container.appendChild(p);
+//   });
 }
 
 function renderNoWorkoutText() {
