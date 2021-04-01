@@ -1,6 +1,26 @@
 .history-wrapper {
     min-height: 100%;
     padding-bottom: 50px;
+    background-color: #f8f6f6;
+}
+
+.history-wrapper header {
+    padding-top: 30px;
+    background: rgb(37, 179, 148);
+    height: 170px;
+    color: white;
+    margin: 15px;
+    border-radius: 10px;
+}
+
+.history-wrapper h1 {
+    font-size: 40px;
+    font-weight: 400;
+    margin-top: 10px;
+}
+
+.history-wrapper #history-span {
+    font-weight: 600;
 }
 
 .history-content {
@@ -9,14 +29,20 @@
 
 .workout-div {
     width: 50%;
-    border: solid 1px black;
+    background-color: white;
+    border: solid 1px rgb(240, 239, 239);
+    border-radius: 8px;
     margin: 10px auto;
+    box-shadow: 1px 2px 3px 0 rgb(218, 218, 218);
 }
 
 .workout-date-div {
     text-align: center;
-    padding: 10px;
-    border-bottom: solid 1px grey;
+    padding: 20px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    font-size: 20px;
+    font-weight: 300;
 }
 
 .exercise-div {
