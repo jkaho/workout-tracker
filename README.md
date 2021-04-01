@@ -1,2 +1,41 @@
-# workout-tracker
-Homework for week 17 (NoSQL)
+# Workout Tracker
+
+## Description 
+*Workout Tracker* is a responsive full stack application to help people keep track of their workouts. On the homepage, users can choose to either add exercises to their last workout (if it exists) or to create a new workout to add exercises to. Additionally, users can view the stats for their last seven workouts on the dashboard page, and can also view all of their previous workouts on the history page. 
+
+## Development
+The objective of this project was to build the backend to the existing front-end UI. Additional code that was added to the frontend includes: 
+- Functionality to delete workouts.
+- Workout history page.
+- Style changes on all pages.
+
+## Technologies Used 
+- Node.js
+- Express
+- JavaScript
+- MongoDB
+- Mongoose 
+- nodemon 
+- HTML 
+- CSS 
+- Google Fonts
+- Font Awesome
+- Canva
+
+## Screenshots
+
+### Homepage
+![Workout Tracker homepage](images/readme/homepage.png)
+
+### Exercise Page
+![Workout Tracker exercise page](images/readme/exercise.png)
+
+### Workout Dashboard Page
+![Workout Tracker workout dashboard page](images/readme/dashboard.png)
+
+### Workout History Page
+![Workout Tracker workout history page](images/readme/history.png)
+
+## Link
+Link to deployed application: []()
+
