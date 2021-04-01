@@ -7,44 +7,56 @@ function showWorkoutHistory(workoutHistory) {
         workoutDiv.classList.add("workout-div");
         const workoutDateDiv = document.createElement("div");
         workoutDateDiv.classList.add("workout-date-div");
-        workoutDateDiv.textContent = workout.day;
+        const workoutDate = moment(workout.day).format("DD-MM-YY h:mma")
+        workoutDateDiv.textContent = workoutDate;
 
         workoutDiv.appendChild(workoutDateDiv);
 
         // Loop through each workout exercise
         const workoutExercises = workout.exercises;
+        let counter = 0;
         workoutExercises.forEach(exercise => {
+            counter++;
             const exerciseDiv = document.createElement("div");
             exerciseDiv.classList.add("exercise-div");
+            if (counter === workoutExercises.length) {
+                exerciseDiv.classList.add("last-exercise");
+            }
             
             const exerciseNameDiv = document.createElement("div");
-            exerciseNameDiv.textContent = exercise.name;
-            const exerciseTypeDiv = document.createElement("div");
-            exerciseTypeDiv.textContent = exercise.type;
+            exerciseNameDiv.textContent = `Exercise #${counter}: ${exercise.name}`;
             const exerciseDurationDiv = document.createElement("div");
             exerciseDurationDiv.textContent = exercise.duration;
 
-            workoutDiv.appendChild(exerciseNameDiv);
-            workoutDiv.appendChild(exerciseTypeDiv);
-            workoutDiv.appendChild(exerciseDurationDiv);
+            exerciseDiv.appendChild(exerciseNameDiv);
 
             if (exercise.type === "cardio") {
+                const exerciseTypeDiv = document.createElement("div");
+                exerciseTypeDiv.textContent = "Type: Cardio";
                 const exerciseDistanceDiv = document.createElement("div");
-                exerciseDistanceDiv.textContent = exercise.distance;
+                exerciseDistanceDiv.textContent = `Distance: ${exercise.distance}`;
 
-                workoutDiv.appendChild(exerciseDistanceDiv);
+                exerciseDiv.appendChild(exerciseTypeDiv);
+                exerciseDiv.appendChild(exerciseDurationDiv);
+                exerciseDiv.appendChild(exerciseDistanceDiv);
             } else {
+                const exerciseTypeDiv = document.createElement("div");
+                exerciseTypeDiv.textContent = "Type: Resistance";
                 const exerciseWeightDiv = document.createElement("div");
-                exerciseWeightDiv.textContent = exercise.weight;
+                exerciseWeightDiv.textContent = `Weight: ${exercise.weight}`;
                 const exerciseSetsDiv = document.createElement("div");
-                exerciseSetsDiv.textContent = exercise.sets;
+                exerciseSetsDiv.textContent = `Sets: ${exercise.sets}`;
                 const exerciseRepsDiv = document.createElement("div");
-                exerciseRepsDiv.textContent = exercise.reps;
+                exerciseRepsDiv.textContent = `Reps: ${exercise.reps}`;
 
-                workoutDiv.appendChild(exerciseWeightDiv);
-                workoutDiv.appendChild(exerciseSetsDiv);
-                workoutDiv.appendChild(exerciseRepsDiv);
+                exerciseDiv.appendChild(exerciseTypeDiv);
+                exerciseDiv.appendChild(exerciseDurationDiv);
+                exerciseDiv.appendChild(exerciseWeightDiv);
+                exerciseDiv.appendChild(exerciseSetsDiv);
+                exerciseDiv.appendChild(exerciseRepsDiv);
             }
+
+            workoutDiv.appendChild(exerciseDiv);
         })
 
         contentDiv.appendChild(workoutDiv);

@@ -12,3 +12,11 @@
     border: solid 1px black;
     margin: 10px;
 }
+
+.exercise-div {
+    border-bottom: solid 1px grey;
+}
+
+.last-exercise {
+    border-bottom: 0;
+}
