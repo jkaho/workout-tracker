@@ -8,15 +8,37 @@
 }
 
 .workout-div {
-    padding: 10px;
+    width: 50%;
     border: solid 1px black;
-    margin: 10px;
+    margin: 10px auto;
 }
 
-.exercise-div {
+.workout-date-div {
+    text-align: center;
+    padding: 10px;
     border-bottom: solid 1px grey;
 }
 
-.last-exercise {
-    border-bottom: 0;
+.exercise-div {
+    padding: 10px;
+    border-bottom: solid 1px grey;
+}
+
+/* .last-exercise {
+    margin-bottom: 10px;
+} */
+
+.edit-exercise-btn, .delete-exercise-btn {
+    display: inline-block;
+    margin: 5px 5px 0 5px;
+    height: 40px;
+    width: 40px;
+    border-radius: 100%;
+    border: none;
+    background: black;
+    color: white;
+}
+
+.delete-workout-btn {
+    margin: 10px auto;
 }

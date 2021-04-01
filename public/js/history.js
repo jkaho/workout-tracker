@@ -19,14 +19,14 @@ function showWorkoutHistory(workoutHistory) {
             counter++;
             const exerciseDiv = document.createElement("div");
             exerciseDiv.classList.add("exercise-div");
-            if (counter === workoutExercises.length) {
-                exerciseDiv.classList.add("last-exercise");
-            }
+            // if (counter === workoutExercises.length) {
+            //     exerciseDiv.classList.add("last-exercise");
+            // }
             
             const exerciseNameDiv = document.createElement("div");
             exerciseNameDiv.textContent = `Exercise #${counter}: ${exercise.name}`;
             const exerciseDurationDiv = document.createElement("div");
-            exerciseDurationDiv.textContent = exercise.duration;
+            exerciseDurationDiv.textContent = `Duration: ${exercise.duration}`;
 
             exerciseDiv.appendChild(exerciseNameDiv);
 
@@ -56,9 +56,26 @@ function showWorkoutHistory(workoutHistory) {
                 exerciseDiv.appendChild(exerciseRepsDiv);
             }
 
+            const exerciseBtnDiv = document.createElement("div");
+            const editExerciseBtn = document.createElement("button");
+            editExerciseBtn.classList.add("edit-exercise-btn");
+            editExerciseBtn.innerHTML = "<i class='fas fa-edit'></i>";
+            const deleteExerciseBtn = document.createElement("button");
+            deleteExerciseBtn.classList.add("delete-exercise-btn");
+            deleteExerciseBtn.innerHTML = "<i class='fas fa-trash'></i>";
+
+            exerciseBtnDiv.appendChild(editExerciseBtn);
+            exerciseBtnDiv.appendChild(deleteExerciseBtn);
+            exerciseDiv.appendChild(exerciseBtnDiv);
+
             workoutDiv.appendChild(exerciseDiv);
         })
 
+        const deleteWorkoutBtn = document.createElement("button");
+        deleteWorkoutBtn.classList.add("delete-workout-btn");
+        deleteWorkoutBtn.innerHTML = "Delete workout";
+
+        workoutDiv.appendChild(deleteWorkoutBtn);
         contentDiv.appendChild(workoutDiv);
     })
 }
