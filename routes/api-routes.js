@@ -27,6 +27,18 @@ module.exports = (app) => {
             });
     });
 
+    app.delete("/api/workouts/:id", (req, res) => {
+        // Delete workout
+        db.Workout.deleteOne({ _id: req.params.id })
+            .then(deletedWorkout => {
+                console.log("Workout successfully deleted!")
+                res.json(deletedWorkout);
+            })
+            .catch(err => {
+                res.json(err);
+            })
+    });
+
     app.put("/api/workouts/:id", (req, res) => {
         // Add exercise to workout
         db.Workout.findOneAndUpdate(

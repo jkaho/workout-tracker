@@ -1,3 +1,4 @@
+// Render all workouts
 function showWorkoutHistory(workoutHistory) {
     const contentDiv = document.querySelector(".history-content");
 
@@ -5,6 +6,9 @@ function showWorkoutHistory(workoutHistory) {
     workoutHistory.forEach(workout => {
         const workoutDiv = document.createElement("div");
         workoutDiv.classList.add("workout-div");
+        const workoutDivId = workout._id;
+        workoutDiv.setAttribute("id", `no-${workoutDivId}`);
+
         const workoutDateDiv = document.createElement("div");
         workoutDateDiv.classList.add("workout-date-div");
         const workoutDate = moment(workout.day).format("DD-MM-YY h:mma")
@@ -78,6 +82,18 @@ function showWorkoutHistory(workoutHistory) {
         workoutDiv.appendChild(deleteWorkoutBtn);
         contentDiv.appendChild(workoutDiv);
     })
+
+    // Delete workout functionality
+    const deleteWorkoutBtns = document.querySelectorAll(".delete-workout-btn");
+    deleteWorkoutBtns.forEach(button => {
+        button.addEventListener("click", function(event) {
+            event.preventDefault();
+            const workoutDiv = event.target.parentElement;
+            const workoutId = workoutDiv.getAttribute("id").split("-")[1];
+            API.deleteWorkout(workoutId).then(() => window.location.replace("/history"));
+        })
+    });
 }
 
 API.getAllWorkouts().then(showWorkoutHistory);
+

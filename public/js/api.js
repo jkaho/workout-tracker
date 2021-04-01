@@ -29,9 +29,9 @@ const API = {
         const id = location.search.split("=")[1];
 
         const res = await fetch("/api/workouts/" + id, {
-        method: "PUT",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(data)
+            method: "PUT",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(data)
         });
 
         const json = await res.json();
@@ -42,13 +42,25 @@ const API = {
     // Requests to post an empty workout object
     async createWorkout(data = {}) {
         const res = await fetch("/api/workouts", {
-        method: "POST",
-        body: JSON.stringify(data),
-        headers: { "Content-Type": "application/json" }
+            method: "POST",
+            body: JSON.stringify(data),
+            headers: { "Content-Type": "application/json" }
         });
 
         const json = await res.json();
 
+        return json;
+    },
+
+    // Request to delete specified workout
+    async deleteWorkout(id) {
+        const res = await fetch("/api/workouts/" + id, {
+            method: "DELETE",
+            headers: { "Content-Type": "application/json" }
+        });
+
+        const json = await res.json();
+        console.log(json);
         return json;
     },
 
