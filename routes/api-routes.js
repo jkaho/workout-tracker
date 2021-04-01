@@ -8,6 +8,21 @@ module.exports = (app) => {
                 $addFields: {
                     totalDuration: { $sum: "$exercises.duration" }
                 }
+            }
+        ]).then(result => {
+            res.json(result)
+        }).catch(err => {
+            res.json(err);
+        });
+    });
+
+    app.get("/api/workouts/sorted", (req, res) => {
+        // Get all workouts, sort from newest to oldeset
+        db.Workout.aggregate([
+            { 
+                $addFields: {
+                    totalDuration: { $sum: "$exercises.duration" }
+                }
             },
             {
                 $sort: { day: -1 }
@@ -17,7 +32,7 @@ module.exports = (app) => {
         }).catch(err => {
             res.json(err);
         });
-    });
+    })
 
     app.post("/api/workouts", (data, res) => {
         // Create workout 

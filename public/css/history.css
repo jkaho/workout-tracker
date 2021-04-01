@@ -7,10 +7,9 @@
 .history-wrapper header {
     padding-top: 30px;
     background: rgb(37, 179, 148);
-    height: 170px;
     color: white;
     margin: 15px;
-    border-radius: 10px;
+    border-radius: 15px;
 }
 
 .history-wrapper h1 {
