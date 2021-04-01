@@ -1,11 +1,23 @@
 const API = {
+    // Requests to retrieve all workouts 
+    async getAllWorkouts() {
+        let res;
+        try {
+            res = await fetch("/api/workouts");
+        } catch (err) {
+            console.log(err);
+        }
+        const json = await res.json();
+        return json;
+    },
+
     // Requests backend to retrieve all workouts, grabs the last one
     async getLastWorkout() {
         let res;
         try {
-        res = await fetch("/api/workouts");
+            res = await fetch("/api/workouts");
         } catch (err) {
-        console.log(err)
+            console.log(err)
         }
         const json = await res.json();
         console.log(json);
@@ -40,7 +52,7 @@ const API = {
         return json;
     },
 
-    // Request to retrieve all workouts
+    // Request to retrieve all workouts in the past seven days
     async getWorkoutsInRange() {
         const res = await fetch(`/api/workouts/range`);
         const json = await res.json();
