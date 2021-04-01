@@ -23,6 +23,7 @@ function showWorkoutHistory(workoutHistory) {
             counter++;
             const exerciseDiv = document.createElement("div");
             exerciseDiv.classList.add("exercise-div");
+            exerciseDiv.classList.add(`no-${counter - 1}`);
             // if (counter === workoutExercises.length) {
             //     exerciseDiv.classList.add("last-exercise");
             // }
@@ -82,6 +83,20 @@ function showWorkoutHistory(workoutHistory) {
         workoutDiv.appendChild(deleteWorkoutBtn);
         contentDiv.appendChild(workoutDiv);
     })
+
+    // Delete exercise functionality
+    // const deleteExerciseBtns = document.querySelectorAll(".delete-exercise-btn");
+    // deleteExerciseBtns.forEach(button => {
+    //     button.addEventListener("click", function(event) {
+    //         event.preventDefault();
+    //         const workoutDiv = event.target.parentElement.parentElement.parentElement;
+    //         console.log(workoutDiv)
+    //         const workoutId = workoutDiv.getAttribute("id").split("-")[1];
+    //         const exerciseDiv = event.target.parentElement.parentElement;
+    //         const exerciseIndex = exerciseDiv.classList[1].split("-")[1];
+    //         API.deleteExercise(workoutId, exerciseIndex).then(() => window.location.replace("/history"));
+    //     })
+    // })
 
     // Delete workout functionality
     const deleteWorkoutBtns = document.querySelectorAll(".delete-workout-btn");

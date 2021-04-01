@@ -53,6 +53,20 @@ module.exports = (app) => {
             });
     });
 
+    // app.put("/api/workouts/exercise/:id", (req, res) => {
+    //     // Delete exercise from workout
+    //     const field = `exercises.${req.body}`;
+    //     console.log(field);
+    //     db.Workout.findOneAndUpdate(
+    //         { _id: req.params.id }, { $pull: { field }})
+    //         .then(deleteExercise => {
+    //             res.json(deleteExercise);
+    //         })
+    //         .catch(err => {
+    //             res.json(err);
+    //         })
+    // });
+
     app.get("/api/workouts/range", (data, res) => {
         // Get past seven workouts
         db.Workout.aggregate([

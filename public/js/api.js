@@ -24,7 +24,7 @@ const API = {
         return json[json.length - 1];
     },
 
-    // Requests to update specified workout with exercise
+    // Requests to update specified workout to add exercise
     async addExercise(data) {
         const id = location.search.split("=")[1];
 
@@ -38,6 +38,24 @@ const API = {
         console.log(json);
         return json;
     },
+
+    // Requests to update specified workout to delete exercise
+    // async deleteExercise(id, index) {
+    //     const res = await fetch("/api/workouts/exercise/" + id, {
+    //         method: "PUT",
+    //         headers: { "Content-Type": "application/json" },
+    //         body: JSON.stringify(index)
+    //     });
+
+    //     try {
+    //         const json = await res.json();
+    //         console.log(json);
+    //     } catch (err) {
+    //         console.log("This is the error");
+    //         console.log(err);
+    //     }
+    //     return json;
+    // },
     
     // Requests to post an empty workout object
     async createWorkout(data = {}) {
