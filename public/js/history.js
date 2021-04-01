@@ -5,6 +5,11 @@ function showWorkoutHistory(workoutHistory) {
     workoutHistory.forEach(workout => {
         const workoutDiv = document.createElement("div");
         workoutDiv.classList.add("workout-div");
+        const workoutDateDiv = document.createElement("div");
+        workoutDateDiv.classList.add("workout-date-div");
+        workoutDateDiv.textContent = workout.day;
+
+        workoutDiv.appendChild(workoutDateDiv);
 
         // Loop through each workout exercise
         const workoutExercises = workout.exercises;

@@ -1,0 +1,14 @@
+.history-wrapper {
+    min-height: 100%;
+    padding-bottom: 50px;
+}
+
+.history-content {
+    height: 100%;
+}
+
+.workout-div {
+    padding: 10px;
+    border: solid 1px black;
+    margin: 10px;
+}
