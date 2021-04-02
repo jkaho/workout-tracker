@@ -11,7 +11,7 @@ function showWorkoutHistory(workoutHistory) {
 
         const workoutDateDiv = document.createElement("div");
         workoutDateDiv.classList.add("workout-date-div");
-        const workoutDate = moment(workout.day).format("DD-MM-YY h:mma")
+        const workoutDate = moment(workout.day).format("dddd, DD-MM-YY, h:mma")
         workoutDateDiv.textContent = workoutDate;
 
         workoutDiv.appendChild(workoutDateDiv);
@@ -24,20 +24,39 @@ function showWorkoutHistory(workoutHistory) {
             const exerciseDiv = document.createElement("div");
             exerciseDiv.classList.add("exercise-div");
             exerciseDiv.classList.add(`no-${counter - 1}`);
-            // if (counter === workoutExercises.length) {
-            //     exerciseDiv.classList.add("last-exercise");
-            // }
+            if (counter === workoutExercises.length) {
+                exerciseDiv.classList.add("last-exercise");
+            }
             
             const exerciseNameDiv = document.createElement("div");
-            exerciseNameDiv.textContent = `Exercise #${counter}: ${exercise.name}`;
-            const exerciseDurationDiv = document.createElement("div");
-            exerciseDurationDiv.textContent = `Duration: ${exercise.duration}`;
-
+            exerciseNameDiv.classList.add("exercise-name");
+            exerciseNameDiv.textContent = `Exercise #${counter} `;
+            const exerciseNameSpan = document.createElement("span");
+            exerciseNameSpan.classList.add("exercise-name-span");
+            exerciseNameSpan.textContent = exercise.name;
+            exerciseNameDiv.appendChild(exerciseNameSpan);
             exerciseDiv.appendChild(exerciseNameDiv);
 
             // Create table to hold exercise stats
             const exerciseTable = document.createElement("table");
             exerciseTable.classList.add("exercise-table");
+
+            // Render exercise duration to table
+            const exerciseDurationTr = document.createElement("tr");
+            const exerciseDurationTdKey = document.createElement("td");
+            exerciseDurationTdKey.classList.add("exercise-keys");
+            const exerciseDurationTdValue = document.createElement("td");
+            exerciseDurationTdValue.classList.add("exercise-values");
+
+            const exerciseDurationKeyP = document.createElement("p");
+            exerciseDurationKeyP.textContent = "DURATION";
+            const exerciseDurationValueP = document.createElement("p");
+            exerciseDurationValueP.textContent = exercise.duration + " minutes";
+
+            exerciseDurationTdKey.appendChild(exerciseDurationKeyP);
+            exerciseDurationTdValue.appendChild(exerciseDurationValueP);
+            exerciseDurationTr.appendChild(exerciseDurationTdKey);
+            exerciseDurationTr.appendChild(exerciseDurationTdValue);
 
             if (exercise.type === "cardio") {
                 // Render exercise type to table
@@ -67,7 +86,7 @@ function showWorkoutHistory(workoutHistory) {
                 const exerciseDistanceKeyP = document.createElement("p");
                 exerciseDistanceKeyP.textContent = "DISTANCE";
                 const exerciseDistanceValueP = document.createElement("p");
-                exerciseDistanceValueP.textContent = exercise.distance;
+                exerciseDistanceValueP.textContent = exercise.distance + "km";
 
                 exerciseDistanceTdKey.appendChild(exerciseDistanceKeyP);
                 exerciseDistanceTdValue.appendChild(exerciseDistanceValueP);
@@ -76,6 +95,7 @@ function showWorkoutHistory(workoutHistory) {
 
                 // Append table to exercise div
                 exerciseTable.appendChild(exerciseTypeTr);
+                exerciseTable.appendChild(exerciseDurationTr);
                 exerciseTable.appendChild(exerciseDistanceTr);
                 exerciseDiv.appendChild(exerciseTable);
             } else {
@@ -106,7 +126,7 @@ function showWorkoutHistory(workoutHistory) {
                 const exerciseWeightKeyP = document.createElement("p");
                 exerciseWeightKeyP.textContent = "WEIGHT";
                 const exerciseWeightValueP = document.createElement("p");
-                exerciseWeightValueP.textContent = exercise.weight;
+                exerciseWeightValueP.textContent = exercise.weight + "kg";
 
                 exerciseWeightTdKey.appendChild(exerciseWeightKeyP);
                 exerciseWeightTdValue.appendChild(exerciseWeightValueP);
@@ -149,19 +169,22 @@ function showWorkoutHistory(workoutHistory) {
 
                 // Render table to exercise div 
                 exerciseTable.append(exerciseTypeTr);
+                exerciseTable.appendChild(exerciseDurationTr);
                 exerciseTable.append(exerciseWeightTr);
                 exerciseTable.append(exerciseSetsTr);
                 exerciseTable.append(exerciseRepsTr);
                 exerciseDiv.appendChild(exerciseTable);
             }
 
+            // Create edit & delete exercise buttons
             const exerciseBtnDiv = document.createElement("div");
+            exerciseBtnDiv.classList.add("exercise-btn-div");
             const editExerciseBtn = document.createElement("button");
             editExerciseBtn.classList.add("edit-exercise-btn");
-            editExerciseBtn.innerHTML = "<i class='fas fa-edit'></i>";
+            editExerciseBtn.innerHTML = "<i class='fas fa-edit'></i> Edit exercise";
             const deleteExerciseBtn = document.createElement("button");
             deleteExerciseBtn.classList.add("delete-exercise-btn");
-            deleteExerciseBtn.innerHTML = "<i class='fas fa-trash'></i>";
+            deleteExerciseBtn.innerHTML = "<i class='fas fa-trash'></i> Delete exercise";
 
             exerciseBtnDiv.appendChild(editExerciseBtn);
             exerciseBtnDiv.appendChild(deleteExerciseBtn);
@@ -170,6 +193,7 @@ function showWorkoutHistory(workoutHistory) {
             workoutDiv.appendChild(exerciseDiv);
         })
 
+        // Create delete workout button
         const deleteWorkoutBtn = document.createElement("button");
         deleteWorkoutBtn.classList.add("delete-workout-btn");
         deleteWorkoutBtn.innerHTML = "Delete workout";

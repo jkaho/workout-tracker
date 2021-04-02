@@ -29,9 +29,9 @@
 .workout-div {
     width: 50%;
     background-color: white;
-    border: solid 1px rgb(240, 239, 239);
+    border: solid 2px rgb(95, 136, 170);
     border-radius: 8px;
-    margin: 10px auto;
+    margin: 20px auto;
     box-shadow: 1px 2px 3px 0 rgb(218, 218, 218);
 }
 
@@ -41,16 +41,34 @@
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
     font-size: 20px;
-    font-weight: 300;
+    font-weight: 400;
+    background: rgb(95, 136, 170);
+    color: rgb(232, 237, 248);
 }
 
 .exercise-div {
-    padding: 10px;
-    border-bottom: solid 1px grey;
+    padding-bottom: 10px;
+}
+
+.last-exercise {
+    border-bottom: solid 2px rgb(95, 136, 170)
+}
+
+.exercise-name {
+    text-align: center;
+    height: 40px;
+    padding-top: 10px;
+    font-size: 18px;
+    font-weight: 300;
+    background: rgb(203, 223, 240);
+}
+
+.exercise-name-span {
+    font-weight: 600;
 }
 
 .exercise-table {
-    padding: 10px 40px 20px 40px;
+    padding: 10px 40px 0 40px;
 }
 
 .exercise-keys {
@@ -63,21 +81,58 @@
     text-align: left;
     padding-left: 30px;
 }
-/* .last-exercise {
-    margin-bottom: 10px;
-} */
+
+.exercise-btn-div {
+    text-align: center;
+}
 
 .edit-exercise-btn, .delete-exercise-btn {
+    font-family: 'Lexend', sans-serif;
     display: inline-block;
     margin: 5px 5px 0 5px;
-    height: 40px;
-    width: 40px;
-    border-radius: 100%;
-    border: none;
-    background: black;
-    color: white;
+    border-radius: 5px;
+    border: solid 2px rgb(148, 148, 148);
+    color: rgb(148, 148, 148);
+    background: white;
+}
+
+.edit-exercise-btn:hover {
+    border: solid 2px rgb(184, 209, 115);
+    color: rgb(184, 209, 115);
+}
+
+.delete-exercise-btn:hover {
+    border: solid 2px rgb(250, 184, 61);
+    color: rgb(250, 184, 61);
 }
 
 .delete-workout-btn {
-    margin: 10px auto;
+    font-family: 'Lexend', sans-serif;
+    height: 100%;
+    width: 100%;
+    font-size: 14px;
+    background: rgb(216, 216, 216);
+    color: rgb(82, 82, 82);
+    border: none;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
 }
+
+.delete-workout-btn:hover {
+    color: rgb(216, 216, 216);
+    background: rgb(82, 82, 82);
+}
+
+/* .delete-workout-btn {
+    font-family: 'Lexend', sans-serif;
+    font-size: 14px;
+    margin: 10px auto;
+    background: white;
+    color:rgb(255, 77, 77);
+    border: solid 2px rgb(255, 77, 77);
+}
+
+.delete-workout-btn:hover {
+    color: white;
+    background: rgb(255, 77, 77);
+} */
