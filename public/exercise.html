@@ -6,8 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+        integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous" />
     <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100;300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/exercise.css" />
     <title>Workout Tracker</title>
 </head>
 
@@ -24,12 +27,11 @@
     </nav>
     <div class="wrapper">
         <header></header>
-        <div class="ui container exercise">
+        <div class="ui container exercise exercise-container">
             <div class="ui raised card m-auto">
                 <h2>Add Your Exercise</h2>
                 <form action="POST">
                     <div class="workout-type">
-                        <label for="type">Exercise Type:</label>
                         <select name="type" id="type">
                             <option disabled selected>Select Exercise Type</option>
                             <option value="resistance">Resistance</option>
@@ -42,7 +44,7 @@
                             <input type="text" name="cardio-name" id="cardio-name" placeholder="Running" />
                         </div>
                         <div class="distance">
-                            <label for="distance">Distance (miles):</label>
+                            <label for="distance">Distance (km):</label>
                             <input type="number" name="distance" id="distance" placeholder="5" />
                         </div>
                         <div class="duration">
@@ -56,7 +58,7 @@
                             <input type="text" name="name" id="name" placeholder="Bench Press" />
                         </div>
                         <div class="weight">
-                            <label for="weight">Weight (lbs):</label>
+                            <label for="weight">Weight (kgs):</label>
                             <input type="number" name="weight" id="weight" placeholder="200" />
                         </div>
                         <div class="sets">
@@ -73,10 +75,10 @@
                         </div>
                     </div>
                     <div class="buttons">
-                        <button disabled class="huge ui blue button complete">
+                        <button disabled class="ui button complete">
                             Complete
                         </button>
-                        <button disabled class="huge ui positive button add-another">
+                        <button disabled class="ui button add-another">
                             Add Exercise
                         </button>
                     </div>
@@ -85,9 +87,8 @@
         </div>
     </div>
     <div id="toast">
-        Workout Added Successfully!
+        Workout successfully added <i class="fas fa-check"></i>
     </div>
-    
     <script src="/js/api.js"></script>
     <script src="/js/exercise.js"></script>
 </body>

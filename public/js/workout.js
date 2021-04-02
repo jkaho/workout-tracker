@@ -50,11 +50,11 @@ function renderWorkoutSummary(summary) {
   const workoutKeyMap = {
     date: "DATE",
     numExercises: "EXERCISES PERFORMED",
-    totalDuration: "WORKOUT DURATION",
-    totalWeight: "TOTAL WEIGHT LIFTED",
+    totalDuration: "WORKOUT DURATION (MIN)",
+    totalWeight: "TOTAL WEIGHT LIFTED (KG)",
     totalSets: "TOTAL SETS PERFORMED",
     totalReps: "TOTAL REPS PERFORMED",
-    totalDistance: "TOTAL DISTANCE COVERED"
+    totalDistance: "TOTAL DISTANCE COVERED (KM)"
   };
 
   const workoutTable = document.createElement("table");

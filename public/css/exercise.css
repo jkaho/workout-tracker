@@ -1,0 +1,183 @@
+.workout-type,
+.cardio-form,
+.resistance-form {
+    padding: 10px;
+}
+
+.workout-type,
+form .cardio-form div,
+form .resistance-form div {
+    display: flex;
+    margin-top: 20px;
+}
+
+.exercise .ui.card {
+    width: 500px;
+    max-width: 600px;
+    padding: 15px;
+}
+
+.exercise .ui.card h2 {
+    text-align: center;
+    font-weight: 400;
+    border-bottom: solid 1px rgb(231, 231, 231);
+}
+
+/* SELECT */
+select {
+    font-family: 'Lexend', sans-serif;
+    display: block;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+    font-size: 1rem;
+    border-radius: 6px;
+    border: 1px solid #aaa;
+    width: 100%;
+    padding: 10px;
+    background: white;
+    background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23007CB2%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E");
+    background-repeat: no-repeat, repeat;
+    background-position: right 0.7em top 50%, 0 0;
+    background-size: 0.65em auto, 100%;
+}
+
+select::-ms-expand {
+    display: none;
+}
+
+select:focus {
+    border-color: #aaa;
+    box-shadow: 0 0 1px 3px rgba(59, 153, 252, 0.7);
+    box-shadow: 0 0 0 3px -moz-mac-focusring;
+    color: #222;
+    outline: none;
+}
+
+select option {
+    font-weight: normal;
+    width: 100%;
+}
+
+/* INPUT */ 
+input {
+    font-family: 'Lexend', sans-serif;
+    display: block;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+    font-size: 1rem;
+    border-radius: 6px;
+    border: 1px solid #aaa;
+    width: 100%;
+    padding: 10px;
+}
+
+/* FORM */
+form label {
+    width: 150px;
+    margin-top: 0.7rem;
+}
+
+form > button {
+    float: right;
+    margin-top: 20px;
+}
+
+form::after {
+    content: " ";
+    display: block;
+    clear: both;
+}
+
+/* BUTTONS */
+.exercise .buttons {
+    margin-top: 20px;
+    display: flex;
+}
+
+.exercise .buttons button {
+    width: 100%;
+}
+
+.exercise .complete, .exercise .add-another {
+    font-size: 16px;
+    font-family: 'Lexend', sans-serif;
+    font-weight: 400;
+    padding: 18px;
+}
+
+.exercise .complete {
+    background-color: white;
+    border: solid 2px rgb(86, 187, 255);
+    color: rgb(0, 114, 190);
+    margin: 10px 5px 10px 10px;
+}
+
+.exercise .complete:hover {
+    background-color: rgb(86, 187, 255);
+    color: white;
+}
+
+.exercise .add-another {
+    background-color: white;
+    border: solid 2px rgb(67, 214, 182);
+    color: rgb(0, 128, 100);
+    margin: 10px 10px 10px 5px;
+}
+
+.exercise .add-another:hover {
+    background-color: rgb(67, 214, 182);
+    color: white;
+}
+
+.exercise .complete:focus {
+    background-color: rgb(226, 239, 248);
+}
+
+.exercise .add-another:focus {
+    background-color: rgb(224, 247, 241);
+}
+
+/* SUCCESS MESSAGE */
+#toast {
+    border-radius: 4px;
+    border: solid 1px hsl(94, 90%, 16%);
+    font-size: 15px;
+    line-height: 19.5px;
+    margin: 0px 0px 16px;
+    padding: 30px 59.5px 12px 20px;
+    text-align: left;
+    width: 300px;
+    min-height: 80px;
+    position: fixed;
+    top: 120px;
+    right: -320px;
+    opacity: 1;
+    transition: all 1s;
+    z-index: 15;
+}
+  
+#toast.success {
+    opacity: 1;
+    right: 10px;
+    background-color: hsl(94, 40%, 86%);
+    color: hsl(94, 90%, 16%);
+    /* transition: all 1.2s; */
+    animation-name: toast;
+    animation-duration: 4s;
+    animation-fill-mode: forwards;
+    animation-delay: 0.2s;
+    animation-timing-function: cubic-bezier(0.785, 0.135, 0.15, 0.86);
+}
+
+@keyframes toast {
+    50% {
+        opacity: 1;
+        right: 10px;
+    }
+    100% {
+        opacity: 0;
+        right: -320px;
+    }
+}
