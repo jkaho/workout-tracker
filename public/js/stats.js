@@ -72,6 +72,7 @@ function populateChart(data) {
       responsive: true,
       title: {
         display: true,
+        text: 'LINE GRAPH',
       },
       scales: {
         xAxes: [
@@ -125,7 +126,7 @@ function populateChart(data) {
     options: {
       title: {
         display: true,
-        text: 'Kilograms Lifted',
+        text: 'BAR CHART',
       },
       scales: {
         yAxes: [
@@ -154,7 +155,7 @@ function populateChart(data) {
     options: {
       title: {
         display: true,
-        text: 'Workout Duration in Minutes',
+        text: 'PIE CHART',
       },
     },
   });
@@ -174,7 +175,7 @@ function populateChart(data) {
     options: {
       title: {
         display: true,
-        text: 'Kilograms Lifted',
+        text: 'DOUGHNUT CHART',
       },
     },
   });
