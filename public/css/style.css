@@ -19,7 +19,7 @@ body,
     background-color: #f8f6f6;
     position: relative;
     z-index: 5;
-    padding-bottom: 100px;
+    /* padding-bottom: 100px; */
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -287,3 +287,18 @@ form > button {
     right: -320px;
     opacity: 0;
 } */
+
+/* FOOTER */
+footer {
+    height: fit-content;
+    width: 100%;
+    background-color: #f8f6f6;
+}
+
+#footer-link {
+    width: fit-content;
+    margin: 0 auto;
+    color: grey;
+    padding-bottom: 15px;
+    font-size: 15px;
+}
