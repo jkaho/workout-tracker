@@ -23,39 +23,44 @@ function generatePalette() {
 
 function populateChart(data) {
   let durations = data.map(({ totalDuration }) => totalDuration);
+  let dates = data.map(({ day }) => moment(day).format("DD-MM-YY HH:mm"));
   let pounds = calculateTotalWeight(data);
-  let workouts = workoutNames(data);
+//   let workouts = workoutNames(data);
   const colors = generatePalette();
-  console.log(durations)
-  console.log(workouts)
 
   let line = document.querySelector('#canvas').getContext('2d');
   let bar = document.querySelector('#canvas2').getContext('2d');
   let pie = document.querySelector('#canvas3').getContext('2d');
   let pie2 = document.querySelector('#canvas4').getContext('2d');
 
-  const daysOfWeek = [
-    'Sunday',
-    'Monday',
-    'Tuesday',
-    'Wednesday',
-    'Thursday',
-    'Friday',
-    'Saturday',
-  ];
+//   const daysOfWeek = [
+//     'Sunday',
+//     'Monday',
+//     'Tuesday',
+//     'Wednesday',
+//     'Thursday',
+//     'Friday',
+//     'Saturday',
+//   ];
 
-  const labels = data.map(({ day }) => {
-    const date = new Date(day);
-    return daysOfWeek[date.getDay()];
-  });
+/*
+    I didn't use the days of the week as labels for the line graph and bar chart
+    as I felt that it would be more useful to label the x-axis with the full date
+    of the workout 
+*/
+
+//   const labels = data.map(({ day }) => {
+//     const date = new Date(day);
+//     return daysOfWeek[date.getDay()];
+//   });
 
   let lineChart = new Chart(line, {
     type: 'line',
     data: {
-      labels,
+      labels: dates,
       datasets: [
         {
-          label: 'Workout Duration In Minutes',
+          label: 'Workout Duration in Minutes',
           backgroundColor: 'red',
           borderColor: 'red',
           data: durations,
@@ -92,10 +97,10 @@ function populateChart(data) {
   let barChart = new Chart(bar, {
     type: 'bar',
     data: {
-      labels,
+      labels: dates,
       datasets: [
         {
-          label: 'Pounds',
+          label: 'Kilograms',
           data: pounds,
           backgroundColor: [
             'rgba(255, 99, 132, 0.2)',
@@ -120,7 +125,7 @@ function populateChart(data) {
     options: {
       title: {
         display: true,
-        text: 'Pounds Lifted',
+        text: 'Kilograms Lifted',
       },
       scales: {
         yAxes: [
@@ -137,10 +142,10 @@ function populateChart(data) {
   let pieChart = new Chart(pie, {
     type: 'pie',
     data: {
-      labels: workouts,
+      labels: dates,
       datasets: [
         {
-          label: 'Exercises Performed',
+          label: 'Workout Duration in Minutes',
           backgroundColor: colors,
           data: durations,
         },
@@ -149,7 +154,7 @@ function populateChart(data) {
     options: {
       title: {
         display: true,
-        text: 'Exercises Performed',
+        text: 'Workout Duration in Minutes',
       },
     },
   });
@@ -157,10 +162,10 @@ function populateChart(data) {
   let donutChart = new Chart(pie2, {
     type: 'doughnut',
     data: {
-      labels: workouts,
+      labels: dates,
       datasets: [
         {
-          label: 'Exercises Performed',
+          label: 'Kilograms Lifted',
           backgroundColor: colors,
           data: pounds,
         },
@@ -169,7 +174,7 @@ function populateChart(data) {
     options: {
       title: {
         display: true,
-        text: 'Exercises Performed',
+        text: 'Kilograms Lifted',
       },
     },
   });
@@ -193,18 +198,25 @@ function calculateTotalWeight(data) {
   return totals;
 }
 
-function workoutNames(data) {
-  let workouts = [];
+API.getWorkoutsInRange().then(populateChart);
 
-  data.forEach(workout => {
-    workout.exercises.forEach(exercise => {
-      workouts.push(exercise.name);
-    });
-  });
+/* 
+    The following function doesn't make sense -> it's taking the exercise names of each workout
+    and applying them as labels to the total duration of each workout 
+    (There can be multiple exercises in a workout)
+*/
 
-  // return de-duplicated array with JavaScript `Set` object
-  return [...new Set(workouts)];
-}
+// function workoutNames(data) {
+//   let workouts = [];
+
+//   data.forEach(workout => {
+//     workout.exercises.forEach(exercise => {
+//       workouts.push(exercise.name);
+//     });
+//   });
+
+//   // return de-duplicated array with JavaScript `Set` object
+//   return [...new Set(workouts)];
+// }
 
 // get all workout data from back-end
-API.getWorkoutsInRange().then(populateChart);

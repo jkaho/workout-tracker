@@ -11,7 +11,7 @@ function showWorkoutHistory(workoutHistory) {
 
         const workoutDateDiv = document.createElement("div");
         workoutDateDiv.classList.add("workout-date-div");
-        const workoutDate = moment(workout.day).format("dddd, DD-MM-YY, h:mma")
+        const workoutDate = moment(workout.day).format("dddd, DD-MM-YY, HH:mm")
         workoutDateDiv.textContent = workoutDate;
 
         workoutDiv.appendChild(workoutDateDiv);
