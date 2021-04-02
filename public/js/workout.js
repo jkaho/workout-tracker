@@ -7,7 +7,7 @@ async function initWorkout() {
       .setAttribute("href", `/exercise?id=${lastWorkout._id}`);
 
     const workoutSummary = {
-      date: formatDate(lastWorkout.day),
+      date: moment(lastWorkout.day).format("DD-MM-YYYY"),
       totalDuration: lastWorkout.totalDuration,
       numExercises: lastWorkout.exercises.length,
       ...tallyExercises(lastWorkout.exercises)
@@ -33,16 +33,20 @@ function tallyExercises(exercises) {
   return tallied;
 }
 
-function formatDate(date) {
-  const options = {
-    weekday: "long",
-    year: "numeric",
-    month: "long",
-    day: "numeric"
-  };
+/*
+    Used moment.js instead of this function 
+*/
 
-  return new Date(date).toLocaleDateString(options);
-}
+// function formatDate(date) {
+//   const options = {
+//     weekday: "long",
+//     year: "numeric",
+//     month: "long",
+//     day: "numeric"
+//   };
+
+//   return new Date(date).toLocaleDateString(options);
+// }
 
 function renderWorkoutSummary(summary) {
   const container = document.querySelector(".workout-stats");
