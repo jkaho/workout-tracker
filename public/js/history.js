@@ -35,30 +35,124 @@ function showWorkoutHistory(workoutHistory) {
 
             exerciseDiv.appendChild(exerciseNameDiv);
 
+            // Create table to hold exercise stats
+            const exerciseTable = document.createElement("table");
+            exerciseTable.classList.add("exercise-table");
+
             if (exercise.type === "cardio") {
-                const exerciseTypeDiv = document.createElement("div");
-                exerciseTypeDiv.textContent = "Type: Cardio";
-                const exerciseDistanceDiv = document.createElement("div");
-                exerciseDistanceDiv.textContent = `Distance: ${exercise.distance}`;
+                // Render exercise type to table
+                const exerciseTypeTr = document.createElement("tr");
+                const exerciseTypeTdKey = document.createElement("td");
+                exerciseTypeTdKey.classList.add("exercise-keys");
+                const exerciseTypeTdValue = document.createElement("td");
+                exerciseTypeTdValue.classList.add("exercise-values");
 
-                exerciseDiv.appendChild(exerciseTypeDiv);
-                exerciseDiv.appendChild(exerciseDurationDiv);
-                exerciseDiv.appendChild(exerciseDistanceDiv);
+                const exerciseTypeKeyP = document.createElement("p");
+                exerciseTypeKeyP.textContent = "TYPE";
+                const exerciseTypeValueP = document.createElement("p");
+                exerciseTypeValueP.textContent = "Cardio";
+
+                exerciseTypeTdKey.appendChild(exerciseTypeKeyP);
+                exerciseTypeTdValue.appendChild(exerciseTypeValueP);
+                exerciseTypeTr.appendChild(exerciseTypeTdKey);
+                exerciseTypeTr.appendChild(exerciseTypeTdValue);
+
+                // Render exercise distance to table
+                const exerciseDistanceTr = document.createElement("tr");
+                const exerciseDistanceTdKey = document.createElement("td");
+                exerciseDistanceTdKey.classList.add("exercise-keys");
+                const exerciseDistanceTdValue = document.createElement("td");
+                exerciseDistanceTdValue.classList.add("exercise-values");
+
+                const exerciseDistanceKeyP = document.createElement("p");
+                exerciseDistanceKeyP.textContent = "DISTANCE";
+                const exerciseDistanceValueP = document.createElement("p");
+                exerciseDistanceValueP.textContent = exercise.distance;
+
+                exerciseDistanceTdKey.appendChild(exerciseDistanceKeyP);
+                exerciseDistanceTdValue.appendChild(exerciseDistanceValueP);
+                exerciseDistanceTr.appendChild(exerciseDistanceTdKey);
+                exerciseDistanceTr.appendChild(exerciseDistanceTdValue);
+
+                // Append table to exercise div
+                exerciseTable.appendChild(exerciseTypeTr);
+                exerciseTable.appendChild(exerciseDistanceTr);
+                exerciseDiv.appendChild(exerciseTable);
             } else {
-                const exerciseTypeDiv = document.createElement("div");
-                exerciseTypeDiv.textContent = "Type: Resistance";
-                const exerciseWeightDiv = document.createElement("div");
-                exerciseWeightDiv.textContent = `Weight: ${exercise.weight}`;
-                const exerciseSetsDiv = document.createElement("div");
-                exerciseSetsDiv.textContent = `Sets: ${exercise.sets}`;
-                const exerciseRepsDiv = document.createElement("div");
-                exerciseRepsDiv.textContent = `Reps: ${exercise.reps}`;
+                // Render exercise type to table
+                const exerciseTypeTr = document.createElement("tr");
+                const exerciseTypeTdKey = document.createElement("td");
+                exerciseTypeTdKey.classList.add("exercise-keys");
+                const exerciseTypeTdValue = document.createElement("td");
+                exerciseTypeTdValue.classList.add("exercise-values");
 
-                exerciseDiv.appendChild(exerciseTypeDiv);
-                exerciseDiv.appendChild(exerciseDurationDiv);
-                exerciseDiv.appendChild(exerciseWeightDiv);
-                exerciseDiv.appendChild(exerciseSetsDiv);
-                exerciseDiv.appendChild(exerciseRepsDiv);
+                const exerciseTypeKeyP = document.createElement("p");
+                exerciseTypeKeyP.textContent = "TYPE";
+                const exerciseTypeValueP = document.createElement("p");
+                exerciseTypeValueP.textContent = "Resistance";
+
+                exerciseTypeTdKey.appendChild(exerciseTypeKeyP);
+                exerciseTypeTdValue.appendChild(exerciseTypeValueP);
+                exerciseTypeTr.appendChild(exerciseTypeTdKey);
+                exerciseTypeTr.appendChild(exerciseTypeTdValue);
+
+                // Render exercise weight to table
+                const exerciseWeightTr = document.createElement("tr");
+                const exerciseWeightTdKey = document.createElement("td");
+                exerciseWeightTdKey.classList.add("exercise-keys");
+                const exerciseWeightTdValue = document.createElement("td");
+                exerciseWeightTdValue.classList.add("exercise-values");
+
+                const exerciseWeightKeyP = document.createElement("p");
+                exerciseWeightKeyP.textContent = "WEIGHT";
+                const exerciseWeightValueP = document.createElement("p");
+                exerciseWeightValueP.textContent = exercise.weight;
+
+                exerciseWeightTdKey.appendChild(exerciseWeightKeyP);
+                exerciseWeightTdValue.appendChild(exerciseWeightValueP);
+                exerciseWeightTr.appendChild(exerciseWeightTdKey);
+                exerciseWeightTr.appendChild(exerciseWeightTdValue);
+
+                // Render exercise sets to table
+                const exerciseSetsTr = document.createElement("tr");
+                const exerciseSetsTdKey = document.createElement("td");
+                exerciseSetsTdKey.classList.add("exercise-keys");
+                const exerciseSetsTdValue = document.createElement("td");
+                exerciseSetsTdValue.classList.add("exercise-values");
+
+                const exerciseSetsKeyP = document.createElement("p");
+                exerciseSetsKeyP.textContent = "SETS";
+                const exerciseSetsValueP = document.createElement("p");
+                exerciseSetsValueP.textContent = exercise.sets;
+
+                exerciseSetsTdKey.appendChild(exerciseSetsKeyP);
+                exerciseSetsTdValue.appendChild(exerciseSetsValueP);
+                exerciseSetsTr.appendChild(exerciseSetsTdKey);
+                exerciseSetsTr.appendChild(exerciseSetsTdValue);
+ 
+                // Render exercise reps to table
+                const exerciseRepsTr = document.createElement("tr");
+                const exerciseRepsTdKey = document.createElement("td");
+                exerciseRepsTdKey.classList.add("exercise-keys");
+                const exerciseRepsTdValue = document.createElement("td");
+                exerciseRepsTdValue.classList.add("exercise-values");
+
+                const exerciseRepsKeyP = document.createElement("p");
+                exerciseRepsKeyP.textContent = "REPS";
+                const exerciseRepsValueP = document.createElement("p");
+                exerciseRepsValueP.textContent = exercise.reps;
+
+                exerciseRepsTdKey.appendChild(exerciseRepsKeyP);
+                exerciseRepsTdValue.appendChild(exerciseRepsValueP);
+                exerciseRepsTr.appendChild(exerciseRepsTdKey);
+                exerciseRepsTr.appendChild(exerciseRepsTdValue);
+
+                // Render table to exercise div 
+                exerciseTable.append(exerciseTypeTr);
+                exerciseTable.append(exerciseWeightTr);
+                exerciseTable.append(exerciseSetsTr);
+                exerciseTable.append(exerciseRepsTr);
+                exerciseDiv.appendChild(exerciseTable);
             }
 
             const exerciseBtnDiv = document.createElement("div");
