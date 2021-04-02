@@ -22,6 +22,37 @@
     font-weight: 600;
 }
 
+#exercise-color-key {
+    /* background: white;
+    border: solid 1px rgb(192, 192, 192); */
+    width: 50%;
+    height: 50px;
+    margin: 0 auto;
+    /* box-shadow: 1px 2px 3px 0 rgb(218, 218, 218);
+    border-radius: 8px; */
+    text-align: center;
+}
+
+#color-key {
+    font-weight: 500;
+}
+
+#resistance-key, #cardio-key {
+    display: inline-block;
+    height: 30px;
+    width: 100px;
+    padding: 5px;
+    margin: 5px;
+}
+
+#resistance-key {
+    background: rgb(203, 223, 240)
+}
+
+#cardio-key {
+    background: rgb(198, 193, 218);
+}
+
 .history-content {
     height: 100%;
 }
@@ -32,6 +63,7 @@
     border: solid 2px rgb(95, 136, 170);
     border-radius: 8px;
     margin: 20px auto;
+    margin-top: 0;
     box-shadow: 1px 2px 3px 0 rgb(218, 218, 218);
 }
 
@@ -46,12 +78,12 @@
     color: rgb(232, 237, 248);
 }
 
-.exercise-div {
-    padding-bottom: 10px;
-}
+/* .exercise-div {
+    padding-bottom: 20px;
+} */
 
 .last-exercise {
-    border-bottom: solid 2px rgb(95, 136, 170)
+    border-bottom: solid 2px rgb(95, 136, 170);
 }
 
 .exercise-name {
@@ -60,7 +92,6 @@
     padding-top: 10px;
     font-size: 18px;
     font-weight: 300;
-    background: rgb(203, 223, 240);
 }
 
 .exercise-name-span {
@@ -84,12 +115,14 @@
 
 .exercise-btn-div {
     text-align: center;
+    margin: 15px 0;
 }
 
 .edit-exercise-btn, .delete-exercise-btn {
     font-family: 'Lexend', sans-serif;
     display: inline-block;
-    margin: 5px 5px 0 5px;
+    width: 46%;
+    margin: 0 5px;
     border-radius: 5px;
     border: solid 2px rgb(148, 148, 148);
     color: rgb(148, 148, 148);
@@ -102,8 +135,8 @@
 }
 
 .delete-exercise-btn:hover {
-    border: solid 2px rgb(250, 184, 61);
-    color: rgb(250, 184, 61);
+    border: solid 2px rgb(255, 77, 77);
+    color: rgb(255, 77, 77);
 }
 
 .delete-workout-btn {

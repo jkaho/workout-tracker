@@ -59,6 +59,9 @@ function showWorkoutHistory(workoutHistory) {
             exerciseDurationTr.appendChild(exerciseDurationTdValue);
 
             if (exercise.type === "cardio") {
+                // Set exercise name div colour 
+                exerciseNameDiv.setAttribute("style", "background: rgb(198, 193, 218)");
+
                 // Render exercise type to table
                 const exerciseTypeTr = document.createElement("tr");
                 const exerciseTypeTdKey = document.createElement("td");
@@ -99,6 +102,9 @@ function showWorkoutHistory(workoutHistory) {
                 exerciseTable.appendChild(exerciseDistanceTr);
                 exerciseDiv.appendChild(exerciseTable);
             } else {
+                // Set exercise name div colour 
+                exerciseNameDiv.setAttribute("style", "background: rgb(203, 223, 240)");
+
                 // Render exercise type to table
                 const exerciseTypeTr = document.createElement("tr");
                 const exerciseTypeTdKey = document.createElement("td");
