@@ -138,3 +138,16 @@ form::after {
 .exercise .add-another:focus {
     background-color: rgb(224, 247, 241);
 }
+
+/* ------- MEDIA QUERIES ------- */
+@media (max-width: 500px) {
+    .exercise .ui.card {
+        width: 95%;
+        max-width: 350px;
+    }
+
+    .exercise .complete, .exercise .add-another {
+        font-size: 13px;
+    }
+    
+}
