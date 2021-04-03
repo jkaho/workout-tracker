@@ -70,6 +70,7 @@ function populateChart(data) {
     },
     options: {
       responsive: true,
+      maintainAspectRatio: false,
       title: {
         display: true,
         text: 'LINE GRAPH',
@@ -124,6 +125,8 @@ function populateChart(data) {
       ],
     },
     options: {
+      responsive: true,
+      maintainAspectRatio: false,
       title: {
         display: true,
         text: 'BAR CHART',
@@ -153,6 +156,8 @@ function populateChart(data) {
       ],
     },
     options: {
+      responsive: true,
+      maintainAspectRatio: false,
       title: {
         display: true,
         text: 'PIE CHART',
@@ -173,6 +178,8 @@ function populateChart(data) {
       ],
     },
     options: {
+      responsive: true,
+      maintainAspectRatio: false,
       title: {
         display: true,
         text: 'DOUGHNUT CHART',

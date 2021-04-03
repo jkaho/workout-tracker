@@ -62,3 +62,41 @@
     margin-top: 3rem;
     margin-bottom: 3rem;
 } */
+
+/* ------- MEDIA QUERIES ------- */
+@media (max-width: 768px) {
+    #duration-pie, #weight-doughnut {
+        margin-top: 10px;
+    }
+}
+
+@media (max-width: 675px) {
+    .nav-title {
+        height: 101px;
+    }
+
+    .nav-links {
+        height: 146px;
+    }
+
+    .stats-wrapper header {
+        height: 100px;
+    }
+
+    .stats-wrapper .container {
+        margin: 25px auto;
+    }
+
+    .stats-wrapper .row {
+        margin-bottom: 35px;
+    }
+    
+    .stats-wrapper h1 {
+        font-size: 30px;
+        margin-top: 0;
+    }
+
+    /* #duration-line, #duration-pie, #weight-bar, #weight-doughnut {
+        height: 300px;
+    } */
+}

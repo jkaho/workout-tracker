@@ -141,6 +141,10 @@ form::after {
 
 /* ------- MEDIA QUERIES ------- */
 @media (max-width: 500px) {
+    .exercise-wrapper header {
+        height: 80px;
+    }
+    
     .exercise .ui.card {
         width: 95%;
         max-width: 350px;
