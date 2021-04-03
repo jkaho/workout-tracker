@@ -16,6 +16,12 @@ function showWorkoutHistory(workoutHistory) {
 
         workoutDiv.appendChild(workoutDateDiv);
 
+        const workoutSelect = document.getElementById("history-search-select");
+        const workoutOption = document.createElement("option");
+        workoutOption.setAttribute("value", workout.day);
+        workoutOption.textContent = workoutDate;
+        workoutSelect.appendChild(workoutOption);
+
         // Loop through each workout exercise
         const workoutExercises = workout.exercises;
         let counter = 0;

@@ -22,6 +22,39 @@
     font-weight: 600;
 }
 
+/* WORKOUT SEARCH */
+#history-search-div {
+    width: fit-content;
+    margin: 10px auto;
+}
+
+/* #history-search-div label {
+    font-weight: 500;
+} */
+
+#history-search-select {
+    font-family: 'Lexend', sans-serif;
+    height: 38px;
+    width: 250px;
+    border-radius: 5px;
+    border-color: rgb(189, 189, 189);
+}
+
+#history-search-btn {
+    margin-top: 0;
+    border-radius: 5px;
+    background: rgb(255, 238, 191);
+    border-color: rgb(238, 209, 145);
+    color: rgb(207, 150, 27);
+}
+
+#history-search-btn:hover {
+    background: rgb(207, 150, 27);
+    border-color: rgb(207, 150, 27);
+    color: rgb(255, 238, 191);
+}
+
+/* EXERCISE COLOUR KEY */ 
 #exercise-color-key {
     /* background: white;
     border: solid 1px rgb(192, 192, 192); */
@@ -53,6 +86,7 @@
     background: rgb(198, 193, 218);
 }
 
+/* WORKOUT DIVS */
 .history-content {
     height: 100%;
 }
