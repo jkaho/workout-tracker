@@ -7,7 +7,8 @@
 The objective of this project was to build the backend to the existing front-end UI. Additional code that was added to the frontend includes: 
 - Functionality to delete workouts
 - Workout history page
-- Style changes on all pages
+- General style changes on all pages
+- Responsive design
 
 ## Technologies Used 
 - Node.js
@@ -15,7 +16,9 @@ The objective of this project was to build the backend to the existing front-end
 - JavaScript
 - MongoDB
 - Mongoose 
+- Robo 3T
 - nodemon 
+- Chart.js
 - HTML 
 - CSS 
 - Google Fonts
