@@ -34,6 +34,7 @@
 
 #history-search-select {
     font-family: 'Lexend', sans-serif;
+    background: white;
     height: 38px;
     width: 250px;
     border-radius: 5px;
@@ -289,4 +290,34 @@
 #go-back:hover, #confirm-delete:hover {
     background: rgb(68, 68, 68);
     color: white;
+}
+
+/* ------- MEDIA QUERIES ------- */
+@media (max-width: 500px) {
+    .history-wrapper header {
+        height: 100px;
+    }
+    
+    .history-wrapper h1 {
+        font-size: 30px;
+        margin-top: 0;
+    }
+
+    #exercise-color-key {
+        /* background: white;
+        border: solid 1px rgb(192, 192, 192); */
+        width: 95%;
+    }
+
+    #resistance-key, #cardio-key {
+        height: 30px;
+        width: 80px;
+        padding: 5px;
+        margin: 3px;
+        font-size: 13px;
+    }
+
+    .workout-div {
+        width: 95%;
+    }
 }
