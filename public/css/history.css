@@ -219,6 +219,11 @@
     background: white;
 }
 
+#no-workout-history form {
+    width: fit-content;
+    margin: 0 auto;
+}
+
 #add-workout-btn {
     font-family: 'Lexend', sans-serif;
     margin: 20px auto;
