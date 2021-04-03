@@ -345,3 +345,22 @@ footer {
         right: -320px;
     }
 }
+
+/* ------- MEDIA QUERIES ------- */
+@media (max-width: 500px) {
+    nav {
+        height: 170px;
+    }
+
+    .nav-title {
+        width: 100%;
+        text-align: center;
+    }
+
+    .nav-links {
+        width: fit-content;
+        padding-top: 0;
+        float: none;
+        margin: 0 auto;
+    }
+}
