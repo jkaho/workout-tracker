@@ -54,6 +54,7 @@
     text-align: center;
 }
 
+/* BUTTONS */
 .prev-workout .buttons {
     display: flex;
     height: 75px;
@@ -93,4 +94,10 @@
 #new-btn:hover {
     background-color: rgb(67, 214, 182);
     color: white;
+}
+
+/* NO WORKOUTS MESSAGE */
+.no-workout-div {
+    margin: 30px auto;
+    font-size: 18px;
 }

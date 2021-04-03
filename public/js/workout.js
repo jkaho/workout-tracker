@@ -97,12 +97,13 @@ function renderWorkoutSummary(summary) {
 
 function renderNoWorkoutText() {
   const container = document.querySelector(".workout-stats");
-  const p = document.createElement("p");
+  const div = document.createElement("div");
+  div.classList.add("no-workout-div");
   const strong = document.createElement("strong");
   strong.textContent = "You have not created a workout yet!"
 
-  p.appendChild(strong);
-  container.appendChild(p);
+  div.appendChild(strong);
+  container.appendChild(div);
 }
 
 initWorkout();

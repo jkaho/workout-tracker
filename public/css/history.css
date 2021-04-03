@@ -205,8 +205,33 @@
 } */
 
 
-/* DELETE CONFIRMATION MODAL */
+/* NO WORKOUT HISTORY */
+#no-workout-history {
+    display: none;
+    font-size: 35px;
+    font-weight: 500;
+    width: fit-content;
+    margin: 50px auto;
+    border: solid 2px black;
+    padding: 40px;
+    background: white;
+}
 
+#add-workout-btn {
+    font-family: 'Lexend', sans-serif;
+    margin: 20px auto;
+    margin-bottom: 0;
+    background: white;
+    border: solid 2px rgb(67, 214, 182);
+    color: rgb(0, 128, 100);
+}
+
+#add-workout-btn:hover {
+    background: rgb(67, 214, 182);
+    color: white;
+}
+
+/* DELETE CONFIRMATION MODAL */
 .modal-bg {
     display: none;
     position: fixed;
