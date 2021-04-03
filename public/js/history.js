@@ -29,6 +29,7 @@ function showWorkoutHistory(workoutHistory) {
             counter++;
             const exerciseDiv = document.createElement("div");
             exerciseDiv.classList.add("exercise-div");
+            console.log(exercise)
             exerciseDiv.classList.add(`no-${counter - 1}`);
             if (counter === workoutExercises.length) {
                 exerciseDiv.classList.add("last-exercise");
@@ -214,6 +215,7 @@ function showWorkoutHistory(workoutHistory) {
         contentDiv.appendChild(workoutDiv);
     })
 
+    // Search for workout functionality
     workoutSelect.addEventListener("change", function(event) {
         event.preventDefault();
         const workoutSelectValue = event.target.value;
@@ -227,6 +229,7 @@ function showWorkoutHistory(workoutHistory) {
         });
     });
 
+    // View all workouts functionality
     const viewAllBtn = document.getElementById("history-search-btn");
     viewAllBtn.addEventListener("click", function(event) {
         event.preventDefault();
@@ -236,7 +239,7 @@ function showWorkoutHistory(workoutHistory) {
             workoutDiv.setAttribute("style", "display: block");
         });
     });
-    
+
     // Delete exercise functionality
     // const deleteExerciseBtns = document.querySelectorAll(".delete-exercise-btn");
     // deleteExerciseBtns.forEach(button => {

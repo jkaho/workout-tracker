@@ -1,4 +1,5 @@
 const db = require("../models");
+const uniqid = require("uniqid");
 
 module.exports = (app) => {
     app.get("/api/workouts", (req, res) => {
@@ -32,7 +33,7 @@ module.exports = (app) => {
         }).catch(err => {
             res.json(err);
         });
-    })
+    });
 
     app.post("/api/workouts", (data, res) => {
         // Create workout 
@@ -54,7 +55,7 @@ module.exports = (app) => {
             })
             .catch(err => {
                 res.json(err);
-            })
+            });
     });
 
     app.put("/api/workouts/:id", (req, res) => {
@@ -99,5 +100,5 @@ module.exports = (app) => {
         }).catch(err => {
             res.json(err);
         });
-    })
+    });
 }
