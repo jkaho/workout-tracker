@@ -1,6 +1,7 @@
 // Render all workouts
 function showWorkoutHistory(workoutHistory) {
     const contentDiv = document.querySelector(".history-content");
+    const workoutSelect = document.getElementById("history-search-select");
 
     // Loop through each workout
     workoutHistory.forEach(workout => {
@@ -16,9 +17,8 @@ function showWorkoutHistory(workoutHistory) {
 
         workoutDiv.appendChild(workoutDateDiv);
 
-        const workoutSelect = document.getElementById("history-search-select");
         const workoutOption = document.createElement("option");
-        workoutOption.setAttribute("value", workout.day);
+        workoutOption.setAttribute("value", workoutDivId);
         workoutOption.textContent = workoutDate;
         workoutSelect.appendChild(workoutOption);
 
@@ -214,6 +214,29 @@ function showWorkoutHistory(workoutHistory) {
         contentDiv.appendChild(workoutDiv);
     })
 
+    workoutSelect.addEventListener("change", function(event) {
+        event.preventDefault();
+        const workoutSelectValue = event.target.value;
+
+        const workoutDivs = document.querySelectorAll(".workout-div");
+        workoutDivs.forEach(workoutDiv => {
+            workoutDiv.setAttribute("style", "display: block");
+            if (workoutDiv.getAttribute("id") !== `no-${workoutSelectValue}`) {
+                workoutDiv.setAttribute("style", "display: none");
+            }
+        });
+    });
+
+    const viewAllBtn = document.getElementById("history-search-btn");
+    viewAllBtn.addEventListener("click", function(event) {
+        event.preventDefault();
+
+        const workoutDivs = document.querySelectorAll(".workout-div");
+        workoutDivs.forEach(workoutDiv => {
+            workoutDiv.setAttribute("style", "display: block");
+        });
+    });
+    
     // Delete exercise functionality
     // const deleteExerciseBtns = document.querySelectorAll(".delete-exercise-btn");
     // deleteExerciseBtns.forEach(button => {
