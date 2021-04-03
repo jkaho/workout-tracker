@@ -50,11 +50,32 @@
         </div>
         <div class="history-content"></div>
     </div>
+
+    <!-- Modal for delete confirmation -->
+    <div id="delete-modal-bg" class="modal-bg">
+        <div id="delete-modal-div" class="delete-modal">
+            <div class="delete-workout-div">
+                <div class="confirmation-heading">
+                    <h4>Confirmation</h4>
+                    <p>Are you sure you want to delete this workout?</p>
+                </div>
+                <div class="confirmation-btn-div">
+                    <button id="go-back" class="confirm-btn" type="submit">Go back</button>
+                    <button id="confirm-delete" class="confirm-btn" type="submit">Confirm</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <footer>
         <div id="footer-link">
             <a href="https://github.com/jkaho/workout-tracker">Made by jkaho | 2021</a>
         </div>
     </footer>
+
+    <div id="toast">
+        Workout successfully deleted <i class="fas fa-check"></i>
+    </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
     <script src="/js/api.js"></script>

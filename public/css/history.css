@@ -203,3 +203,65 @@
     color: white;
     background: rgb(255, 77, 77);
 } */
+
+
+/* DELETE CONFIRMATION MODAL */
+
+.modal-bg {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.5)
+}
+
+.delete-modal {
+    position: absolute;
+    top: 150px;
+    width: 100%;
+    height: 100%;
+}
+
+.delete-workout-div {
+    position: relative;
+    width: 350px;
+    height: 150px;
+    margin: 0 auto;
+    background-color: white;
+    z-index: 10;
+    border: solid 1px rgb(182, 219, 208);
+    box-shadow: 3px 3px .4em rgb(190, 190, 190), -.1em 0 .4em rgb(206, 206, 206);
+}
+
+.confirmation-heading {
+    height: 75px;
+    padding-top: 10px;
+    font-weight: 300;
+    text-align: center;
+    margin: 10px;
+}
+
+.confirmation-btn-div {
+    margin: 0 auto;
+    width: fit-content;
+}
+
+#go-back, #confirm-delete {
+    font-family: 'Lexend', sans-serif;
+    display: inline-block;
+    font-size: 14px;
+    background: white;
+    color: rgb(68, 68, 68);
+    border: solid 1px rgb(68, 68, 68);
+    padding: 5px;
+    margin: 5px;
+    height: 35px;
+    width: 110px;
+}
+
+#go-back:hover, #confirm-delete:hover {
+    background: rgb(68, 68, 68);
+    color: white;
+}

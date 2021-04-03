@@ -302,3 +302,46 @@ footer {
     padding-bottom: 15px;
     font-size: 15px;
 }
+
+/* SUCCESS MESSAGE */
+#toast {
+    border-radius: 4px;
+    border: solid 1px hsl(94, 90%, 16%);
+    font-size: 15px;
+    line-height: 19.5px;
+    margin: 0px 0px 16px;
+    padding: 30px 59.5px 12px 20px;
+    text-align: left;
+    width: 310px;
+    min-height: 80px;
+    position: fixed;
+    top: 120px;
+    right: -320px;
+    opacity: 1;
+    transition: all 0.5s;
+    z-index: 15;
+}
+  
+#toast.success {
+    opacity: 1;
+    right: 10px;
+    background-color: hsl(94, 40%, 86%);
+    color: hsl(94, 90%, 16%);
+    /* transition: all 1.2s; */
+    animation-name: toast;
+    animation-duration: 3s;
+    animation-fill-mode: forwards;
+    animation-delay: 0.2s;
+    /* animation-timing-function: cubic-bezier(0.785, 0.135, 0.15, 0.86); */
+}
+
+@keyframes toast {
+    50% {
+        opacity: 1;
+        right: 10px;
+    }
+    100% {
+        opacity: 0;
+        right: -320px;
+    }
+}

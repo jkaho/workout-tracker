@@ -208,6 +208,7 @@ function showWorkoutHistory(workoutHistory) {
         // Create delete workout button
         const deleteWorkoutBtn = document.createElement("button");
         deleteWorkoutBtn.classList.add("delete-workout-btn");
+        deleteWorkoutBtn.setAttribute("id", `delete-${workoutDivId}`);
         deleteWorkoutBtn.innerHTML = "Delete workout";
 
         workoutDiv.appendChild(deleteWorkoutBtn);
@@ -259,10 +260,37 @@ function showWorkoutHistory(workoutHistory) {
     deleteWorkoutBtns.forEach(button => {
         button.addEventListener("click", function(event) {
             event.preventDefault();
-            const workoutDiv = event.target.parentElement;
-            const workoutId = workoutDiv.getAttribute("id").split("-")[1];
-            API.deleteWorkout(workoutId).then(() => window.location.replace("/history"));
+            const workoutId = event.target.getAttribute("id").split("-")[1];
+            const confirmationModal = document.getElementById("delete-modal-bg");
+            confirmationModal.setAttribute("value", workoutId);
+            confirmationModal.setAttribute("style", "display: block");
         })
+    });
+
+    const confirmDeleteBtn = document.getElementById("confirm-delete");
+    const toast = document.querySelector("#toast");
+    confirmDeleteBtn.addEventListener("click", async function(event) {
+        event.preventDefault();
+        const confirmationModal = event.target.parentElement.parentElement.parentElement.parentElement;
+        const workoutId = confirmationModal.getAttribute("value");
+        confirmationModal.setAttribute("style", "display: none");
+        await API.deleteWorkout(workoutId);
+        toast.classList.add("success");
+    });
+
+    function handleToastAnimationEnd() {
+        toast.removeAttribute("class");
+        location.href = "/history";
+        
+    };
+
+    toast.addEventListener("animationend", handleToastAnimationEnd);
+
+    const goBackBtn = document.getElementById("go-back");
+    goBackBtn.addEventListener("click", function(event) {
+        event.preventDefault();
+        const confirmationModal = document.getElementById("delete-modal-bg");
+        confirmationModal.setAttribute("style", "display: none");
     });
 }
 
