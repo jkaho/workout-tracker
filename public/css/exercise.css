@@ -23,6 +23,10 @@ form .resistance-form div {
     border-bottom: solid 1px rgb(231, 231, 231);
 }
 
+.exercise-wrapper header {
+    height: 80px;
+}
+
 /* SELECT */
 select {
     font-family: 'Lexend', sans-serif;
