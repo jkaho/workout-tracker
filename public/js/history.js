@@ -29,7 +29,6 @@ function showWorkoutHistory(workoutHistory) {
             counter++;
             const exerciseDiv = document.createElement("div");
             exerciseDiv.classList.add("exercise-div");
-            console.log(exercise)
             exerciseDiv.classList.add(`no-${counter - 1}`);
             if (counter === workoutExercises.length) {
                 exerciseDiv.classList.add("last-exercise");
@@ -190,18 +189,18 @@ function showWorkoutHistory(workoutHistory) {
             }
 
             // Create edit & delete exercise buttons
-            const exerciseBtnDiv = document.createElement("div");
-            exerciseBtnDiv.classList.add("exercise-btn-div");
-            const editExerciseBtn = document.createElement("button");
-            editExerciseBtn.classList.add("edit-exercise-btn");
-            editExerciseBtn.innerHTML = "<i class='fas fa-edit'></i> Edit exercise";
-            const deleteExerciseBtn = document.createElement("button");
-            deleteExerciseBtn.classList.add("delete-exercise-btn");
-            deleteExerciseBtn.innerHTML = "<i class='fas fa-trash'></i> Delete exercise";
+            // const exerciseBtnDiv = document.createElement("div");
+            // exerciseBtnDiv.classList.add("exercise-btn-div");
+            // const editExerciseBtn = document.createElement("button");
+            // editExerciseBtn.classList.add("edit-exercise-btn");
+            // editExerciseBtn.innerHTML = "<i class='fas fa-edit'></i> Edit exercise";
+            // const deleteExerciseBtn = document.createElement("button");
+            // deleteExerciseBtn.classList.add("delete-exercise-btn");
+            // deleteExerciseBtn.innerHTML = "<i class='fas fa-trash'></i> Delete exercise";
 
-            exerciseBtnDiv.appendChild(editExerciseBtn);
-            exerciseBtnDiv.appendChild(deleteExerciseBtn);
-            exerciseDiv.appendChild(exerciseBtnDiv);
+            // exerciseBtnDiv.appendChild(editExerciseBtn);
+            // exerciseBtnDiv.appendChild(deleteExerciseBtn);
+            // exerciseDiv.appendChild(exerciseBtnDiv);
 
             workoutDiv.appendChild(exerciseDiv);
         })
@@ -235,6 +234,7 @@ function showWorkoutHistory(workoutHistory) {
         event.preventDefault();
 
         const workoutDivs = document.querySelectorAll(".workout-div");
+        workoutSelect.value = "default-option";
         workoutDivs.forEach(workoutDiv => {
             workoutDiv.setAttribute("style", "display: block");
         });
