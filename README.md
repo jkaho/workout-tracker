@@ -25,16 +25,16 @@ The objective of this project was to build the backend to the existing front-end
 ## Screenshots
 
 ### Homepage
-![Workout Tracker homepage](images/readme/homepage.png)
+![Workout Tracker homepage](public/images/readme/homepage.png)
 
 ### Exercise Page
-![Workout Tracker exercise page](images/readme/exercise.png)
+![Workout Tracker exercise page](public/images/readme/exercise.png)
 
 ### Workout Dashboard Page
-![Workout Tracker workout dashboard page](images/readme/dashboard.png)
+![Workout Tracker workout dashboard page](public/images/readme/dashboard.png)
 
 ### Workout History Page
-![Workout Tracker workout history page](images/readme/history.png)
+![Workout Tracker workout history page](public/images/readme/history.png)
 
 ## Link
 Link to deployed application: []()
