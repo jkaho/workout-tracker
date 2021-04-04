@@ -5,8 +5,9 @@
 
 ## Development
 The objective of this project was to build the backend to the existing front-end UI. Additional code that was added to the frontend includes: 
-- Functionality to delete workouts
 - Workout history page
+- Functionality to delete workouts
+- Changes to mislabelled charts on dashboard page
 - General style changes on all pages
 - Responsive design
 
