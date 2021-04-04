@@ -2,6 +2,7 @@
     height: 80px;
 }
 
+/* LAST WORKOUT STATS */
 .prev-workout h3 {
     font-size: 25px;
     width: 100%;
@@ -33,10 +34,6 @@
     padding-left: 30px;
 }
 
-.prev-workout button {
-    margin: 10px;
-}
-
 .new-workout {
     display: none;
 }
@@ -54,6 +51,10 @@
 }
 
 /* BUTTONS */
+.prev-workout button {
+    margin: 10px;
+}
+
 .prev-workout .buttons {
     display: flex;
     height: 75px;

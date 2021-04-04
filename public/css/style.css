@@ -35,10 +35,6 @@ h3 {
     font-weight: 400;
 }
   
-/* body {
-    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-} */
-
 .card.m-auto,
 .m-auto {
     margin: 0 auto;
@@ -47,6 +43,20 @@ h3 {
 
 .d-none {
     display: none !important;
+}
+
+.d-flex {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+
+.col {
+    flex: 1;
+}
+
+.ui.card h2 {
+    padding: 10px;
 }
 
 /* NAVBAR */
@@ -106,20 +116,7 @@ header h1 {
     transform: skewX(-2deg);
 }
 
-.d-flex {
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-}
-
-.col {
-    flex: 1;
-}
-
-.ui.card h2 {
-    padding: 10px;
-}
-
+/* BUTTONS */
 .buttons .ui.button:first-child {
     border-radius: 8px;
 }
@@ -128,18 +125,6 @@ header h1 {
     border-radius: 8px;
 }
 
-/* .buttons .ui.button:first-child {
-    border-top-left-radius: 0;
-    border-top-right-radius: 0;
-    border-bottom-right-radius: 0;
-}
-
-.buttons .ui.button:nth-child(2) {
-    border-top-left-radius: 0;
-    border-bottom-left-radius: 0;
-    border-top-right-radius: 0;
-} */
-
 button {
     display: block;
     border: none;
@@ -151,60 +136,17 @@ button {
     background: linear-gradient(to bottom, #ffffff 0%, #e5e5e5 100%);
 }
 
+/* FORMS */
 form label {
     width: 150px;
     margin-top: 0.7rem;
 }
-
-/* form > button {
-  float: right;
-  margin-top: 20px;
-} */
 
 form::after {
     content: " ";
     display: block;
     clear: both;
 }
-
-/* .d-none {
-  display: none;
-} */
-
-button {
-    display: block;
-    border: none;
-    cursor: pointer;
-    font-size: 1rem;
-    border-radius: 6px;
-    border: 1px solid #aaa;
-    padding: 10px;
-    background: linear-gradient(to bottom, #ffffff 0%, #e5e5e5 100%);
-}
-
-/* #toast {
-    border-radius: 4px;
-    border-width: 1px;
-    font-size: 13px;
-    line-height: 19.5px;
-    margin: 0px 0px 16px;
-    padding: 12px 59.5px 12px 20px;
-    text-align: left;
-    width: 300px;
-    min-height: 80px;
-    position: fixed;
-    top: 10px;
-    right: -320px;
-    opacity: 0;
-    transition: all 0.5s;
-}
-
-#toast.success {
-    right: 10px;
-    background-color: hsl(94, 40%, 86%);
-    color: hsl(94, 90%, 16%);
-    transition: all 0.5s;
-} */
 
 form label {
     width: 150px;
@@ -213,48 +155,9 @@ form label {
 
 form > button {
     float: right;
+    margin: 5px;
     margin-top: 20px;
 }
-
-form::after {
-    content: " ";
-    display: block;
-    clear: both;
-}
-
-/* .d-none {
-  display: none;
-} */
-/* 
-button {
-  display: block;
-  border: none;
-  cursor: pointer;
-  font-size: 1rem;
-  border-radius: 6px;
-  border: 1px solid #aaa;
-  padding: 10px;
-  background: linear-gradient(to bottom, #ffffff 0%, #e5e5e5 100%);
-} */
-
-/* #toast {
-  border-radius: 4px;
-  border-width: 1px;
-  font-size: 13px;
-  line-height: 19.5px;
-  margin: 0px 0px 16px;
-  padding: 12px 59.5px 12px 20px;
-  text-align: left;
-  width: 300px;
-  min-height: 80px;
-  position: fixed;
-  top: 10px;
-  right: -320px;
-} */
-
-/* .d-none {
-    display: none;
-} */
 
 .btn,
 button {
@@ -266,27 +169,6 @@ button {
     padding: 10px;
     background: linear-gradient(to bottom, #ffffff 0%, #e5e5e5 100%);
 }
-
-form > button {
-    margin: 5px;
-    margin-top: 20px;
-}
-
-/* #toast {
-    border-radius: 4px;
-    border-width: 1px;
-    font-size: 13px;
-    line-height: 19.5px;
-    margin: 0px 0px 16px;
-    padding: 12px 59.5px 12px 20px;
-    text-align: left;
-    width: 300px;
-    min-height: 80px;
-    position: fixed;
-    top: 10px;
-    right: -320px;
-    opacity: 0;
-} */
 
 /* FOOTER */
 footer {

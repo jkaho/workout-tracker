@@ -29,9 +29,12 @@
     margin: 10px auto;
 }
 
-/* #history-search-div label {
+/* 
+<-- Label for select element -->
+#history-search-div label {
     font-weight: 500;
-} */
+} 
+*/
 
 #history-search-select {
     font-family: 'Lexend', sans-serif;
@@ -58,13 +61,9 @@
 
 /* EXERCISE COLOUR KEY */ 
 #exercise-color-key {
-    /* background: white;
-    border: solid 1px rgb(192, 192, 192); */
     width: 50%;
     height: 50px;
     margin: 0 auto;
-    /* box-shadow: 1px 2px 3px 0 rgb(218, 218, 218);
-    border-radius: 8px; */
     text-align: center;
 }
 
@@ -114,10 +113,7 @@
     color: rgb(232, 237, 248);
 }
 
-/* .exercise-div {
-    padding-bottom: 20px;
-} */
-
+/* EXERCISE DIVS */ 
 .last-exercise {
     border-bottom: solid 2px rgb(95, 136, 170);
 }
@@ -149,6 +145,8 @@
     padding-left: 30px;
 }
 
+/* 
+<-- Edit/delete exercise buttons -->
 .exercise-btn-div {
     text-align: center;
     margin: 15px 0;
@@ -173,7 +171,8 @@
 .delete-exercise-btn:hover {
     border: solid 2px rgb(255, 77, 77);
     color: rgb(255, 77, 77);
-}
+} 
+*/
 
 .delete-workout-btn {
     font-family: 'Lexend', sans-serif;
@@ -191,21 +190,6 @@
     color: rgb(216, 216, 216);
     background: rgb(82, 82, 82);
 }
-
-/* .delete-workout-btn {
-    font-family: 'Lexend', sans-serif;
-    font-size: 14px;
-    margin: 10px auto;
-    background: white;
-    color:rgb(255, 77, 77);
-    border: solid 2px rgb(255, 77, 77);
-}
-
-.delete-workout-btn:hover {
-    color: white;
-    background: rgb(255, 77, 77);
-} */
-
 
 /* NO WORKOUT HISTORY */
 #no-workout-history {

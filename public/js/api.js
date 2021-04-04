@@ -1,5 +1,5 @@
 const API = {
-    // Requests to retrieve all workouts 
+    // Request to retrieve all workouts (sorted from newest to oldest)
     async getAllWorkouts() {
         let res;
         try {
@@ -11,7 +11,7 @@ const API = {
         return json;
     },
 
-    // Requests backend to retrieve all workouts, grabs the last one
+    // Request to retrieve all workouts, grabs the last first one (sorted from newest to oldest)
     async getLastWorkout() {
         let res;
         try {
@@ -24,7 +24,28 @@ const API = {
         return json[0];
     },
 
-    // Requests to update specified workout to add exercise
+    // Request to retrieve all workouts from the past seven days
+    async getWorkoutsInRange() {
+        const res = await fetch(`/api/workouts/range`);
+        const json = await res.json();
+
+        return json;
+    },
+
+    // Request to create an empty workout object
+    async createWorkout(data = {}) {
+        const res = await fetch("/api/workouts", {
+            method: "POST",
+            body: JSON.stringify(data),
+            headers: { "Content-Type": "application/json" }
+        });
+
+        const json = await res.json();
+
+        return json;
+    },
+
+    // Request to update specified workout to add exercise
     async addExercise(data) {
         const id = location.search.split("=")[1];
 
@@ -36,37 +57,6 @@ const API = {
 
         const json = await res.json();
         console.log(json);
-        return json;
-    },
-
-    // Requests to update specified workout to delete exercise
-    // async deleteExercise(id, index) {
-    //     const res = await fetch("/api/workouts/exercise/" + id, {
-    //         method: "PUT",
-    //         headers: { "Content-Type": "application/json" },
-    //         body: JSON.stringify(index)
-    //     });
-
-    //     try {
-    //         const json = await res.json();
-    //         console.log(json);
-    //     } catch (err) {
-    //         console.log("This is the error");
-    //         console.log(err);
-    //     }
-    //     return json;
-    // },
-    
-    // Requests to post an empty workout object
-    async createWorkout(data = {}) {
-        const res = await fetch("/api/workouts", {
-            method: "POST",
-            body: JSON.stringify(data),
-            headers: { "Content-Type": "application/json" }
-        });
-
-        const json = await res.json();
-
         return json;
     },
 
@@ -82,11 +72,21 @@ const API = {
         return json;
     },
 
-    // Request to retrieve all workouts in the past seven days
-    async getWorkoutsInRange() {
-        const res = await fetch(`/api/workouts/range`);
-        const json = await res.json();
+    // Request to update specified workout to delete exercise
+    // async deleteExercise(id, index) {
+    //     const res = await fetch("/api/workouts/exercise/" + id, {
+    //         method: "PUT",
+    //         headers: { "Content-Type": "application/json" },
+    //         body: JSON.stringify(index)
+    //     });
 
-        return json;
-    },
+    //     try {
+    //         const json = await res.json();
+    //         console.log(json);
+    //     } catch (err) {
+    //         console.log("This is the error");
+    //         console.log(err);
+    //     }
+    //     return json;
+    // }
 };

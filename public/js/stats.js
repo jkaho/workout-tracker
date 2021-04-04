@@ -210,7 +210,7 @@ API.getWorkoutsInRange().then(populateChart);
 
 /* 
     The following function doesn't make sense -> it's taking the exercise names of each workout
-    and applying them as labels to the total duration of each workout 
+    which were then being applied as labels to the total duration (pie chart) and weight lifted (doughnut chart) of each workout 
     (There can be multiple exercises in a workout)
 */
 

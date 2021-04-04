@@ -27,18 +27,6 @@
     margin: 50px auto;
 }
 
-/* #duration-heading, #weight-heading {
-    text-align: center;
-} */
-
-/* .stats-wrapper .chart-heading {
-    background: rgb(187, 207, 114);
-    color:rgb(73, 92, 5);
-    height: 80px;
-    padding-top: 10px;
-    border-radius: 5px;
-} */
-
 .stats-wrapper h3 {
     font-size: 24px;
 }
@@ -51,6 +39,7 @@
     margin-bottom: 75px;
 }
 
+/* CHARTS */
 #duration-line, #duration-pie, #weight-bar, #weight-doughnut {
     border-radius: 8px;
     background: white;
@@ -58,11 +47,6 @@
     padding: 10px;
     box-shadow: 1px 2px 3px 0 rgb(218, 218, 218);
 }
-
-/* .stats-wrapper hr {
-    margin-top: 3rem;
-    margin-bottom: 3rem;
-} */
 
 /* ------- MEDIA QUERIES ------- */
 @media (max-width: 768px) {
@@ -96,8 +80,4 @@
         font-size: 30px;
         margin-top: 0;
     }
-
-    /* #duration-line, #duration-pie, #weight-bar, #weight-doughnut {
-        height: 300px;
-    } */
 }

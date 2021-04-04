@@ -1,9 +1,9 @@
 const db = require("../models");
-const uniqid = require("uniqid");
+// const uniqid = require("uniqid");
 
 module.exports = (app) => {
+    // Retrieves all workouts, dynamically adds a totalDuration field and sorts by date in desc order
     app.get("/api/workouts", (req, res) => {
-        // Get all workouts
         db.Workout.aggregate([
             { 
                 $addFields: {
@@ -20,59 +20,8 @@ module.exports = (app) => {
         });
     });
 
-    app.post("/api/workouts", (data, res) => {
-        // Create workout 
-        db.Workout.create(data)
-            .then(newWorkout => {
-                res.json(newWorkout);
-            })
-            .catch(err => {
-                res.json(err);
-            });
-    });
-
-    app.delete("/api/workouts/:id", (req, res) => {
-        // Delete workout
-        db.Workout.deleteOne({ _id: req.params.id })
-            .then(deletedWorkout => {
-                console.log("Workout successfully deleted!")
-                res.json(deletedWorkout);
-            })
-            .catch(err => {
-                res.json(err);
-            });
-    });
-
-    app.put("/api/workouts/:id", (req, res) => {
-        // Add exercise to workout
-        db.Workout.findOneAndUpdate(
-            { _id: req.params.id }, 
-            { $push: { exercises: req.body }},
-            { new: true })
-            .then(updatedWorkout => {
-                res.json(updatedWorkout);
-            })
-            .catch(err => {
-                res.json(err);
-            });
-    });
-
-    // app.put("/api/workouts/exercise/:id", (req, res) => {
-    //     // Delete exercise from workout
-    //     const field = `exercises.${req.body}`;
-    //     console.log(field);
-    //     db.Workout.findOneAndUpdate(
-    //         { _id: req.params.id }, { $pull: { field }})
-    //         .then(deleteExercise => {
-    //             res.json(deleteExercise);
-    //         })
-    //         .catch(err => {
-    //             res.json(err);
-    //         })
-    // });
-
+    // Retrieves all workouts, dynamically adds a totalDuration field and grabs the last 7 workouts
     app.get("/api/workouts/range", (data, res) => {
-        // Get past seven workouts
         db.Workout.aggregate([
             { 
                 $addFields: {
@@ -86,4 +35,55 @@ module.exports = (app) => {
             res.json(err);
         });
     });
+
+    // Creates a new workout document 
+    app.post("/api/workouts", (data, res) => {
+        db.Workout.create(data)
+            .then(newWorkout => {
+                res.json(newWorkout);
+            })
+            .catch(err => {
+                res.json(err);
+            });
+    });
+
+    // Updates a workout by id -> adds an object to exercises field array
+    app.put("/api/workouts/:id", (req, res) => {
+        db.Workout.findOneAndUpdate(
+            { _id: req.params.id }, 
+            { $push: { exercises: req.body }},
+            { new: true })
+            .then(updatedWorkout => {
+                res.json(updatedWorkout);
+            })
+            .catch(err => {
+                res.json(err);
+            });
+    });
+
+    // Deletes a workout by id
+    app.delete("/api/workouts/:id", (req, res) => {
+        db.Workout.deleteOne({ _id: req.params.id })
+            .then(deletedWorkout => {
+                console.log("Workout successfully deleted!")
+                res.json(deletedWorkout);
+            })
+            .catch(err => {
+                res.json(err);
+            });
+    });
+
+    // Updates a workout by id -> removes an object from exercises field array
+    // app.put("/api/workouts/exercise/:id", (req, res) => {
+    //     req.body.id = uniqid();
+    //     console.log(req.body);
+    //     db.Workout.findOneAndUpdate(
+    //         { _id: req.params.id }, { $pull: { field }})
+    //         .then(deleteExercise => {
+    //             res.json(deleteExercise);
+    //         })
+    //         .catch(err => {
+    //             res.json(err);
+    //         })
+    // });
 }

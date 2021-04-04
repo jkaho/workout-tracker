@@ -273,6 +273,7 @@ function showWorkoutHistory(workoutHistory) {
         })
     });
 
+    // Confirmation for deleting a workout
     const confirmDeleteBtn = document.getElementById("confirm-delete");
     const toast = document.querySelector("#toast");
     confirmDeleteBtn.addEventListener("click", async function(event) {
