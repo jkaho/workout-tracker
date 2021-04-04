@@ -40,5 +40,5 @@ The objective of this project was to build the backend to the existing front-end
 ![Workout Tracker workout history page](public/images/readme/history.png)
 
 ## Link
-Link to deployed application: []()
+Link to deployed application: [jkaho-workout-tracker.herokuapp.com](https://jkaho-workout-tracker.herokuapp.com/)
 
