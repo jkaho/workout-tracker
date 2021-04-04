@@ -25,5 +25,5 @@ require("./routes/html-routes.js")(app);
 require("./routes/api-routes.js")(app);
 
 app.listen(PORT, () => {
-  console.log(`Workout Tracker running @ localhost:${PORT}!`);
+  console.log(`Workout Tracker running @http://localhost:${PORT}!`);
 });
