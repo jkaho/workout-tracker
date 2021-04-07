@@ -22,7 +22,7 @@ The objective of this project was to build the backend to the existing front-end
 - Node.js
 - Express
 - JavaScript
-- MongoDB
+- MongoDB / MongoDB Atlas
 - Mongoose 
 - Robo 3T
 - nodemon 
