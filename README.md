@@ -5,10 +5,18 @@
 
 ## Table of Contents
 - [Development](#Development)
+- [Instructions](#Instructions)
 - [Technologies Used](#Technologies-Used)
 - [Screenshots](#Screenshots)
 - [Link to Deployed App](#Link)
 - [Questions](#Questions)
+
+## Instructions
+1. On the homepage, choose to add an exercise to the last workout or to a new workout.
+2. On the exercise page, choose to add either a resistance or cardio exercise and fill in the required details.
+3. After filling in the exercise details, choose to either add another exercise to the workout or to complete the workout and return to the homepage.
+4. Navigate to the 'Dashboard' page to view the stats for the past seven workouts.
+5. Navigate to the 'Workout History' page to view and/or delete past workouts. 
 
 ## Development
 The objective of this project was to build the backend to the existing front-end UI. Additional code that was added to the frontend includes: 
